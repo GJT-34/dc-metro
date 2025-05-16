@@ -7,8 +7,8 @@ This project contains the source code to create your own Washington DC Metro sig
 
 # How To
 ## Hardware
-- An [Adafruit Matrix Portal](https://www.adafruit.com/product/4745) - $24.99
-- A **64x32 RGB LED matrix** compatible with the _Matrix Portal_ - $39.99 _to_ $84.99
+- An [Adafruit Matrix Portal](https://www.adafruit.com/product/4745)
+- A **64x32 RGB LED matrix** compatible with the _Matrix Portal_
     - [64x32 RGB LED Matrix - 3mm pitch](https://www.adafruit.com/product/2279)
     - [64x32 RGB LED Matrix - 4mm pitch](https://www.adafruit.com/product/2278)
     - [64x32 RGB LED Matrix - 5mm pitch](https://www.adafruit.com/product/2277)
