@@ -7,7 +7,7 @@ This project contains the source code to create your own Washington DC Metro sig
 
 # How To
 ## Hardware
-- An [Adafruit Matrix Portal](https://www.adafruit.com/product/4745)
+- An [Adafruit Matrix Portal M4](https://www.adafruit.com/product/4745)
 - A **64x32 RGB LED matrix** compatible with the _Matrix Portal_
     - [64x32 RGB LED Matrix - 3mm pitch](https://www.adafruit.com/product/2279)
     - [64x32 RGB LED Matrix - 4mm pitch](https://www.adafruit.com/product/2278)
