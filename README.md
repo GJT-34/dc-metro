@@ -1,5 +1,5 @@
 # Washington DC Metro Train Sign
-This project contains the source code to create your own Washington DC Metro sign. It was written using CircuitPython targeting the [Adafruit Matrix Portal](https://www.adafruit.com/product/4745) and is optimized for 64x32 RGB LED matrices.
+This project contains the source code to create your own Washington DC Metro sign. It was written using CircuitPython targeting the [Adafruit Matrix Portal M4](https://www.adafruit.com/product/4745) and is optimized for 64x32 RGB LED matrices.
 
 ![bd1](img/bd1.jpg)
 ![bd2](img/bd2.jpg)
@@ -55,6 +55,7 @@ This project contains the source code to create your own Washington DC Metro sig
 
 2. Flash your _Matrix Portal_ with the latest release of CircuitPython 8.
     - Download the [firmware from Adafruit](https://circuitpython.org/board/matrixportal_m4/).
+    - If CircuitPython 8 is no longer the current version, you can still find it using the links in the "Previous Versions of CircuitPython" section of the page that is linked to immediately above.  
     - Drag the downloaded _.uf2_ file into the root of the _MATRIXBOOT_ volume.
     - The board will automatically flash the version of CircuitPython and remount as _CIRCUITPY_.
     - If something goes wrong, refer to the [Adafruit Documentation](https://learn.adafruit.com/adafruit-matrixportal-m4/install-circuitpython).
