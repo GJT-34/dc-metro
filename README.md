@@ -209,6 +209,7 @@ If something goes wrong, take a peek at the [Adafruit Documentation](https://lea
 | Pentagon                                         | BL, YL     | C07  |
 | Pentagon City                                    | BL, YL     | C08  |
 | Potomac Ave                                      | BL, OR, SV | D07  |
+| Potomac Yard                                     | BL, YL     | C11  |
 | Reston Town Center                               | SV         | N07  |
 | Rhode Island Ave-Brentwood                       | RD         | B04  |
 | Rockville                                        | RD         | A14  |
