@@ -1,3 +1,5 @@
+[I'm reworking the code right now, including an upgrade to CircuitPython 10. Until it's ready, don't follow the instructions on this page.]
+
 # Washington DC Metro Train Sign
 This project contains the source code to create your own Washington DC Metro sign. It was written using CircuitPython targeting the [Adafruit Matrix Portal M4](https://www.adafruit.com/product/4745) and is optimized for 64x32 RGB LED matrices.
 
@@ -7,13 +9,13 @@ This project contains the source code to create your own Washington DC Metro sig
 
 # How To
 ## Hardware
-- An [Adafruit Matrix Portal M4](https://www.adafruit.com/product/4745)
+- A [Matrix Portal M4](https://www.adafruit.com/product/4745)
 - A **64x32 RGB LED matrix** compatible with the _Matrix Portal_
     - [64x32 RGB LED Matrix - 3mm pitch](https://www.adafruit.com/product/2279)
     - [64x32 RGB LED Matrix - 4mm pitch](https://www.adafruit.com/product/2278)
     - [64x32 RGB LED Matrix - 5mm pitch](https://www.adafruit.com/product/2277)
     - [64x32 RGB LED Matrix - 6mm pitch](https://www.adafruit.com/product/2276)
-- A **USB-C power supply** (15w phone adapters should work fine for this code, but the panels can theoretically pull 20w if every pixel is on white)
+- A **USB-C power supply** (15w phone adapters (5V/3A) should work fine for this code, while underpowered adapters can lead to board not running properly, or at all)
 - A **USB-C cable** that can connect your computer/power supply to the board
 
 ## Tools
@@ -53,9 +55,9 @@ This project contains the source code to create your own Washington DC Metro sig
     
     ![Matrix Connected via USB](img/usb-connected.jpg)
 
-2. Flash your _Matrix Portal_ with the latest release of CircuitPython 8.
+2. Flash your _Matrix Portal_ with the latest release of CircuitPython 10.
     - Download the [firmware from Adafruit](https://circuitpython.org/board/matrixportal_m4/).
-    - If CircuitPython 8 is no longer the current version, you can still find it using the links in the "Previous Versions of CircuitPython" section of the page that is linked to immediately above.  
+    - If CircuitPython 10 is no longer the current version, you can still find it using the links in the "Previous Versions of CircuitPython" section of the page that is linked to immediately above.  
     - Drag the downloaded _.uf2_ file into the root of the _MATRIXBOOT_ volume.
     - The board will automatically flash the version of CircuitPython and remount as _CIRCUITPY_.
     - If something goes wrong, refer to the [Adafruit Documentation](https://learn.adafruit.com/adafruit-matrixportal-m4/install-circuitpython).
@@ -244,11 +246,11 @@ If something goes wrong, take a peek at the [Adafruit Documentation](https://lea
 ## Train Group Explanations
 A special thanks to [u/SandBoxJohn](https://www.reddit.com/user/SandBoxJohn) for these.
 | Line       | Train Group | Destination                                            |
-|------------|-------------|--------------------------------------------------------|
-| RD         | "1"         | Glenmont                                               |
-| RD         | "2"         | Shady Grove                                            |
-| BL, OR, SV | "1"         | New Carrollton, Largo Town Center                      |
-| BL, OR, SV | "2"         | Vienna, Franconia-Springfield, Ashburn      |
-| GR, YL     | "1"         | Greenbelt                                              |
-| GR, YL     | "2"         | Huntington, Branch Avenue                              |
-| N/A        | "3"         | Center Platform at National Airport, West Falls Church |
+|------------|--  ---------|--------------------------------------------------------|
+| RD         | 1           | Glenmont                                               |
+| RD         | 2           | Shady Grove                                            |
+| BL, OR, SV | 1           | New Carrollton, Largo Town Center                      |
+| BL, OR, SV | 2           | Vienna, Franconia-Springfield, Ashburn                 |
+| GR, YL     | 1           | Greenbelt                                              |
+| GR, YL     | 2           | Huntington, Branch Avenue                              |
+| N/A        | 3           | Center Platform at National Airport, West Falls Church |
