@@ -247,7 +247,7 @@ If something goes wrong, take a peek at the [Adafruit Documentation](https://lea
 A special thanks to [u/SandBoxJohn](https://www.reddit.com/user/SandBoxJohn) for these.
 
 | Line       | Train Group | Destination                                            |
-|------------|--  ---------|--------------------------------------------------------|
+|------------|-------------|--------------------------------------------------------|
 | RD         | 1           | Glenmont                                               |
 | RD         | 2           | Shady Grove                                            |
 | BL, OR, SV | 1           | New Carrollton, Largo Town Center                      |
