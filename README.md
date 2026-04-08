@@ -22,7 +22,7 @@ Some of its features include:
     - [64x32 RGB LED Matrix - 4mm pitch](https://www.adafruit.com/product/2278)
     - [64x32 RGB LED Matrix - 5mm pitch](https://www.adafruit.com/product/2277)
     - [64x32 RGB LED Matrix - 6mm pitch](https://www.adafruit.com/product/2276)
-- A **USB-C power supply** (15w phone adapters (5V/3A) should work fine for this code, while underpowered adapters can lead to board not running properly, or at all)
+- A **USB-C power supply** (15w phone adapters (5V/3A) should work fine, while underpowered adapters can lead to board not running properly, or at all)
 - A **USB-C cable** that can connect your computer/power supply to the board
 
 ## Tools
