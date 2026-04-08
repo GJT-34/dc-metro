@@ -101,7 +101,7 @@ Some of its features include:
 
 3. Save this file. At this point, your board should refresh and connect to WMATA.
 
-## Part 5: Configuring the Board
+## Part 5: Configuring/Using the Board
 1. Open the [config.py](src/config.py) file located in the root of the _CIRCUITPY_ volume
 
 2. There are several configuration entries here, but the only ones you need to edit are in the _screen_, at the top. The rest are optional. 
@@ -152,7 +152,9 @@ Some of its features include:
 
 5. If you enter this information correctly, then once save the file your board should refresh and provide you with information on your station(s).
 
-6. Additional options in the config.py file are explained within the file itself.
+6. Additional options in the config.py file are explained within the file itself. Among other things, these options address how, and how often, the display will rotate through multiple screens.
+   
+7. If the device is set up with multiple screens, the device's UP and DOWN buttons can provide manual rotation control. A press of the device's UP button will freeze the display on the current screen, with a red line flashing once at the bottom of the display to provide feedback that the device registered the button press). A subsequent press will unfreeze it, with the red line flashing twice. The device's DOWN button will manually trigger the next screen, with green line flashing once at the bottom of the display. 
 
 ## Troubleshooting
 If something goes wrong, take a peek at the [Adafruit Documentation](https://learn.adafruit.com/adafruit-matrixportal-m4). Additionally, you can connect to the board using a serial connection to gain access to its logging.
