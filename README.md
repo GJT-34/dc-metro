@@ -5,7 +5,7 @@ This project contains the source code to create your own Washington DC Metro sig
 
 Some of its features include:
 - A customized font that attempts to mimic the font that Metro uses on its signs
-- The ability to display multiple "screens," which can be used to display information for more than one station or for separate groups (i.e., tracks or platforms) at the same station. The board will auto-rotate through the screens on a configurable basis, and manual rotation is provided using the UP (freeze/unfreeze rotation) and DOWN (next screen) buttons.
+- The ability to display multiple "screens," which can be used to display information on more than one station or on separate groups (i.e., tracks or platforms) at the same station. The board will auto-rotate through the screens on a configurable basis, and manual rotation is provided using the UP (freeze/unfreeze rotation) and DOWN (next screen) buttons.
 - The ability to exclude trains that will arrive at a station before you can walk to that station.
 - Multiple options for displaying line, car length, and group/track information.
 - Multiple options for what is displayed in the header for each screen, and for omitting the header altogether.
