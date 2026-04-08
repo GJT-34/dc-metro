@@ -4,7 +4,7 @@
 This project contains the source code to create your own Washington DC Metro sign, using data from WMATA's API for real-time rail predictions. It was written using CircuitPython targeting the [Adafruit Matrix Portal M4](https://www.adafruit.com/product/4745) and is optimized for 64x32 RGB LED matrices.
 
 Some of its features include:
-- A customized font that attempts to mimic the font that Metro uses on its signs
+- A customized font that attempts to mimic the font that Metro uses on its signs.
 - The ability to display multiple "screens," which can be used to display information on more than one station or on separate groups (i.e., tracks or platforms) at the same station. The board will auto-rotate through the screens on a configurable basis, and manual rotation is provided using the UP (freeze/unfreeze rotation) and DOWN (next screen) buttons.
 - The ability to exclude trains that will arrive at a station before you can walk to that station.
 - Multiple options for displaying line, car length, and group/track information.
