@@ -1,7 +1,14 @@
 [I'm reworking the code right now, including an upgrade to CircuitPython 10. Until it's ready, don't follow the instructions on this page.]
 
 # Washington DC Metro Train Sign
-This project contains the source code to create your own Washington DC Metro sign. It was written using CircuitPython targeting the [Adafruit Matrix Portal M4](https://www.adafruit.com/product/4745) and is optimized for 64x32 RGB LED matrices.
+This project contains the source code to create your own Washington DC Metro sign, using data from WMATA's API for real-time rail predictions. It was written using CircuitPython targeting the [Adafruit Matrix Portal M4](https://www.adafruit.com/product/4745) and is optimized for 64x32 RGB LED matrices.
+
+Some of its features include:
+- A customized font that attempts to mimic the font that Metro uses on its signs
+- The ability to display multiple "screens," which can be used to display information for more than one station or for separate groups (i.e., tracks or platforms) at the same station. The board will auto-rotate through the screens on a configurable basis, and manual rotation is provided using the UP (freeze/unfreeze rotation) and DOWN (next screen) buttons.
+- The ability to exclude trains that will arrive at a station before you can walk to that station.
+- Multiple options for displaying line, car length, and group/track information.
+- Multiple options for what is displayed in the header for each screen, and for omitting the header altogether.
 
 ![bd1](img/bd1.jpg)
 ![bd2](img/bd2.jpg)
@@ -87,7 +94,7 @@ This project contains the source code to create your own Washington DC Metro sig
 
 4. Under the _Subscriptions_ section on your profile, select the **show** button beside the _Primary Key_. This is the key that allows the board to communicate with WMATA.
 
-## Part 4: Setting up the board to connect to WMATA
+## Part 4: Setting Up the Board to Connect to WMATA
 1. Open the [settings.toml](src/settings.toml) file located in the root of the _CIRCUITPY_ volume.
 
 2. Fill in your wifi SSID and password and WMATA API key.
@@ -95,51 +102,57 @@ This project contains the source code to create your own Washington DC Metro sig
 3. Save this file. At this point, your board should refresh and connect to WMATA.
 
 ## Part 5: Configuring the Board
-1. Open the [config.py](src/config.py) file located in the root of the _CIRCUITPY_ volume.
+1. Open the [config.py](src/config.py) file located in the root of the _CIRCUITPY_ volume
 
-2. There are a lot of configuration entries here, but the only ones you need to edit are in the _screens_, at the top. The rest are optional to adjust. 
+2. There are several configuration entries here, but the only ones you need to edit are in the _screen_, at the top. The rest are optional. 
 
-3. Under _screens_:
-    - Use the [Metro Station Codes table](#dc-metro-station-codes) at the bottom of this page to set the _metro_station_code_ value to the corresponding value in the table.
-    - Update the _lines_ value with the lines you want displayed, in the order displayed in the Metro Stations Codes table. You can also fill in _station_name_. 
-    
-    - For _train_group_, the value needs to be either **'1'** or **'2'** or  **'3'**. This determines which platform's arrival times will be displayed. These typically fall in line with the values provided in the [Train Group table](#train-group-explanations), although single tracking and other events can cause these to change.
+3. You can display train information on one or more screens (such as having one screen each for two nearby stations) by updating the values in _screen_ and adding additional information as needed. If there is more than one set of _screens_ entries, the display will rotate between them every few seconds. In _screens_:
+ 
+    - Use the [Metro Station Codes table](#dc-metro-station-codes) at the bottom of this page to set the _metro_station_code_ value. You can only use one station per screen, but you can set up additional screens if you have other stations you want to show.
+      
+    - Update the _station_name_ value. This value may be displayed depending on other configuration changes you make. You may need to shorten the name to fit on the screen. (The screen can accommodate about 12 characters across.)
+      
+    - Update the _lines_ value with the lines you want displayed, as set out in the Metro Stations Codes table.
+  
+    - Use [Train Group table](#train-group-explanations) to update the _train_group_ value. A train group is basically WMATA's terminology for "platform" or "track". The value needs to be 1, 2, and/or 3. This value determines which platform's arrival times will be displayed. Note that single tracking can cause a train that would normally be in one group to temporarily be in another.
     
     - For _show_all_groups_if_nothing_else_, the value needs to be either ***True*** or ***False***. This determines what the board should do if there are no trains with assigned lines in your selected group. If True, the board will attempt to show results from all groups instead. This can help during single-tracking, when one group is temporarily reassigned to the other. If False, it will show the results from the selected group, which at most will consist of 'No Psngr' trains with no assigned lines.
-    
-    - Set the _metro_api_key_ value to the API key you got from [Part 3](#part-3-getting-a-wmata-api-key).
+      
+    - Update _walking_time_ to provide the number of minutes it takes for you to get to the station; trains will be excluded from being displayed if they will reach the station before you can arrive there.
+  
+    - Use the [First Columns Options](#first-columns-options) table below to update _first_columns_ according to how you want the display to show line, car length, and track information.
+  
+    - Use the [Header Type Options](#header-type-options) table to update _header_type to show whether you want the display's header to show the categories of train information in the display (i.e., "LN DEST  MIN"), to show the station's name, or to disappear completely so the space can be used to show an additional row of train information.
 
-4. At the end, the first part of your configuration file should look similar this:
+4. At the end, the first part of your configuration file should look similar to what's below. If you only want to show one screen of information, then delete the second set of curly braces (the "{" and "}" characters) and everything in between. Be careful to use single quotes, brackets, and commas consistent with what is set out below.
 
 ```python
-#########################
-# Network Configuration #
-#########################
-
-# WIFI Network SSID
-'wifi_ssid': 'Pretty_fly_for_a_wifi',
-
-# WIFI Password
-'wifi_password': 'Panic!_at_the_cisco',
-
-#########################
-# Metro Configuration   #
-#########################
-
-# Metro Station Code
-'metro_station_code': 'D02',
-
-# Metro Train Group
-'train_group': '2',
-
-# Show All Groups If Nothing Else to Show
-'show_all_groups_if_nothing_else': True,
-
-# API Key for WMATA
-'metro_api_key': 'd3adb33fd3adb33fd3adb33f',
+    'screen': [
+        {
+            'station_code': 'A02',
+            'station_name': 'Frgut N',
+            'lines': ['RD'],
+            'groups': [1, 2],           
+            'walking_time': 0,
+            'first_columns': 1,
+            'header_type': 1
+        },
+        {
+            'station_code': 'C03',
+            'station_name': 'Frgut W',
+            'lines': ['BL', 'OR', 'SV'], 
+            'groups': [1, 2],           
+            'walking_time': 0,
+            'first_columns': 4,
+            'header_type': 1
+        }
+    ],
+    ...
 ```
 
-5. After you save this file, your board should refresh and connect to WMATA.
+5. If you enter this information correctly, then once save the file your board should refresh and provide you with information on your station(s).
+
+6. Additional options in the config.py file are explained within the file itself.
 
 ## Troubleshooting
 If something goes wrong, take a peek at the [Adafruit Documentation](https://learn.adafruit.com/adafruit-matrixportal-m4). Additionally, you can connect to the board using a serial connection to gain access to its logging.
@@ -177,7 +190,7 @@ If something goes wrong, take a peek at the [Adafruit Documentation](https://lea
 | Eastern Market                                   | ['BL', 'OR', 'SV'] | 'D06' |
 | Eisenhower Avenue                                | ['YL']             | 'C14' |
 | Farragut North                                   | ['RD']             | 'A02' |
-| Farragut West                                    | ['BL', 'OR', 'SV'] | 'C03  |
+| Farragut West                                    | ['BL', 'OR', 'SV'] | 'C03' |
 | Federal Center SW                                | ['BL', 'OR', 'SV'] | 'D04' |
 | Federal Triangle                                 | ['BL', 'OR', 'SV'] | 'D01' |
 | Foggy Bottom-GWU                                 | ['BL', 'OR', 'SV'] | 'C04' |
