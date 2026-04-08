@@ -124,7 +124,7 @@ Some of its features include:
   
     - Use the [Header Type Options](#header-type-options) table to update _header_type to show whether you want the display's header to show the categories of train information in the display (i.e., "LN DEST  MIN"), to show the station's name, or to disappear completely so the space can be used to show an additional row of train information.
 
-4. At the end, the first part of your configuration file should look similar to what's below. If you only want to show one screen of information, then delete the second set of curly braces (the "{" and "}" characters) and everything in between. Be careful to use single quotes, brackets, and commas consistent with what is set out below.
+4. In the end, the first part of your configuration file should look similar to what's below. If you only want to show one screen of information, then delete the second set of curly braces (the "{" and "}" characters) and everything in between. Be careful to use single quotes, brackets, and commas consistent with what is set out below.
 
 ```python
     'screen': [
@@ -152,7 +152,7 @@ Some of its features include:
 
 5. If you enter this information correctly, then once save the file your board should refresh and provide you with information on your station(s).
 
-6. Additional options in the config.py file are explained within the file itself. Among other things, these options address how, and how often, the display will rotate through multiple screens.
+6. Additional options in the config.py file are explained within the file itself. Among other things, these options address how, and how often, the display will rotate through multiple screens. They also allow changes to some of the colors the display uses and how the code deals with single tracking.
    
 7. If the device is set up with multiple screens, the device's UP and DOWN buttons can provide manual rotation control. A press of the device's UP button will freeze the display on the current screen, with a red line flashing once at the bottom of the display to provide feedback that the device registered the button press). A subsequent press will unfreeze it, with the red line flashing twice. The device's DOWN button will manually trigger the next screen, with green line flashing once at the bottom of the display. 
 
