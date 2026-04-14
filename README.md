@@ -58,16 +58,16 @@ Some of its features include:
     ![64x32 Matrix with Cable Management](img/cable-management.jpg)
 
 ## Part 2: Loading the Software
-1. Connect the board to your computer using a USB-C cable. Double click the button on the board labeled _RESET_. The board should mount onto your computer as a storage volume, most likely named _MATRIXBOOT_.
+1. Connect the board to your computer using a USB-C cable. Double click the button on the board labeled _RESET_. The board should mount onto your computer as a storage volume, most likely named _MATRIXBOOT_ (M3) or _MATRXS3BOOT_ (for the S3).
     
     ![Matrix Connected via USB](img/usb-connected.jpg)
 
 2. Flash your _Matrix Portal_ with the latest release of CircuitPython 10.
     - Download the *.uf2 firmware from Adafruit, using the proper version for the [M4](https://circuitpython.org/board/matrixportal_m4/) or [S3](https://circuitpython.org/board/adafruit_matrixportal_s3/), depending on which _Matrix Portal_ type you're using.
     - If CircuitPython 10.X.X is no longer the current version, you can still find it using the links in the "Previous Versions of CircuitPython" section of the page that is linked to immediately above. Use the most recent 10.X.X. release available. 
-    - Drag the downloaded _.uf2_ file into the root of the _MATRIXBOOT_ volume.
+    - Drag the downloaded _.uf2_ file into the root of the _MATRIXBOOT_ or _MATRXS3BOOT_ volume.
     - The board will automatically flash the version of CircuitPython and remount as _CIRCUITPY_.
-    - If something goes wrong, refer to the [Adafruit Documentation](https://learn.adafruit.com/adafruit-matrixportal-m4/install-circuitpython).
+    - If something goes wrong, refer to the [Adafruit Documentation](https://learn.adafruit.com/adafruit-matrixportal-m4/install-circuitpython). Note that the S3 has some additional installation methods compared to the M4, as shown on the page (noted above) used to download CircuitPython software for the S3.
 
 3. Decompress the _lib.zip_ file from this repository into the root of the _CIRCUITPY_ volume. There should be one folder named _lib_, with a plethora of files underneath. You can delete _lib.zip_ from the _CIRCUITPY_ volume, as it's no longer needed.
 
