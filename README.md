@@ -16,7 +16,7 @@ Some of its features include:
 
 # How To
 ## Hardware
-- A [Matrix Portal M4](https://www.adafruit.com/product/4745)
+- A [Matrix Portal M4](https://www.adafruit.com/product/4745) or [Matrix Portal S3](https://www.adafruit.com/product/5778). The M4 is no longer available for sale, but the S3 is newer and better. You can buy it directly from Adafruit at the link above, but I found mine at Micro Center. 
 - A **64x32 RGB LED matrix** compatible with the _Matrix Portal_
     - [64x32 RGB LED Matrix - 3mm pitch](https://www.adafruit.com/product/2279)
     - [64x32 RGB LED Matrix - 4mm pitch](https://www.adafruit.com/product/2278)
@@ -32,11 +32,11 @@ Some of its features include:
 - Zip ties _(optional)_
 
 ## Part 1: Prepare the Board
-1. Use a hot glue gun to cover the sharp screws on the right-hand side of the 64x32 LED matrix, if present. This step is optional, but it will prevent wire chafing later on.
+1. Use a hot glue gun to cover the sharp screws on the right-hand side of the 64x32 LED matrix, if present. This step is optional, but it may prevent wire chafing later on.
 
     ![64x32 Matrix with Hot Glue on Screws](img/base-board.jpg)
 
-2. Lightly screw in the phillips head screws into the posts on the _Matrix Portal_. These only need to go down about 60% of the way.
+2. Remove any transparent yellow stickers on the posts of the _Matrix Portal_ and lightly screw in the phillips head screws into the posts. These only need to go down about 60% of the way for now.
 
     ![Matrix Portal with Screws](img/wiring.jpg)
 
