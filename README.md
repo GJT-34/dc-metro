@@ -17,13 +17,13 @@ Some of its features include:
 # How To
 ## Hardware
 - A [Matrix Portal M4](https://www.adafruit.com/product/4745) or [Matrix Portal S3](https://www.adafruit.com/product/5778). The M4 is no longer available for sale, but the S3 is newer and better. You can buy it directly from Adafruit at the link above, but I found mine at Micro Center. 
-- A **64x32 RGB LED matrix** compatible with the _Matrix Portal_
+- A **64x32 RGB LED matrix** compatible with the _Matrix Portal_.
     - [64x32 RGB LED Matrix - 3mm pitch](https://www.adafruit.com/product/2279)
     - [64x32 RGB LED Matrix - 4mm pitch](https://www.adafruit.com/product/2278)
     - [64x32 RGB LED Matrix - 5mm pitch](https://www.adafruit.com/product/2277)
     - [64x32 RGB LED Matrix - 6mm pitch](https://www.adafruit.com/product/2276)
-- A **USB-C power supply** (15w phone adapters (5V/3A) should work fine, while underpowered adapters can lead to board not running properly, or at all)
-- A **USB-C cable** that can connect your computer/power supply to the board
+- A **USB-C power supply**. 15w phone adapters (5V/3A) should work fine, while underpowered adapters can lead to board not running properly, or at all.
+- A **USB-C cable** that can connect your computer/power supply to the board.
 
 ## Tools
 - A small phillips head screwdriver
