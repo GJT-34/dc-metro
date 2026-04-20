@@ -161,8 +161,8 @@ If something goes wrong, take a peek at the [Adafruit Documentation](https://lea
 
 # Appendix
 ## DC Metro Station Codes
-| Name                                             | Lines      | Code |
-|--------------------------------------------------|------------|------|
+| Name                                             | Lines              | Code  |
+|--------------------------------------------------|--------------------|-------|
 | Addison Rd                                       | ['BL', 'SV']       | 'G03' |
 | Anacostia                                        | ['GR']             | 'F06' |
 | Archives                                         | ['GR', 'YL']       | 'F02' |
@@ -265,6 +265,112 @@ If something goes wrong, take a peek at the [Adafruit Documentation](https://lea
 | Wheaton                                          | ['RD']             | 'B10' |
 | Wiehle-Reston East                               | ['SV']             | 'N06' |
 | Woodley Park                                     | ['RD']             | 'A04' |
+
+## DC Metro Station Codes
+| Name                                             | Lines              | Code  |
+|--------------------------------------------------|--------------------|-------|
+| Addison Rd                                       | ['SV', 'BL']       | 'G03' |
+| Anacostia	                                       | ['GR']             | 'F06' |
+| Archives                                         | ['YL', 'GR']	    | 'F02' |
+| Arlington Cemetery	                           | ['BL']	            | 'C06' |
+| Ashburn	                                       | ['SV']	            | 'N12' |
+| Ballston-MU	                                   | ['OR', 'SV']	    | 'K04' |
+| Benning Rd	                                   | ['SV', 'BL']	    | 'G01' |
+| Bethesda	                                       | ['RD']	            | 'A09' |
+| Braddock Rd	                                   | ['YL', 'BL']	    | 'C12' |
+| Branch Av	                                       | ['GR']             | 'F11' |
+| Brookland-CUA                                    | ['RD']	            | 'B05' |
+| Capitol Heights	                               | ['SV', 'BL']	    | 'G02' |
+| Capitol South	                                   | ['OR', 'SV', 'BL]	| 'D05' |
+| Cheverly	                                       | ['OR']	            | 'D11' |
+| Clarendon	                                       | ['OR', 'SV']       | 'K02' |
+| Cleveland Park                                   | ['RD']             | 'A05' |
+| College Park-U of Md                             | ['GR']	            | 'E09' |
+| Columbia Heights                                 | ['YL', 'GR']       | 'E04' |
+| Congress Heights	                               | ['GR']	            | 'F07' |
+| Court House	                                   | ['OR', 'SV']	    | 'K01' |
+| Crystal City	                                   | ['YL', 'BL']       | 'C09' |
+| Deanwood	                                       | ['OR']	            | 'D10' |
+| Downtown Largo	                               | ['SV', 'BL']	    | 'G05' |
+| Dunn Loring	                                   | ['OR']             | 'K07' |
+| Dupont Circle	                                   | ['RD']	            | 'A03' |
+| East Falls Church	                               | ['OR', 'SV']	    | 'K05' |
+| Eastern Market	                               | ['OR', 'SV', 'BL]	| 'D06' |
+| Eisenhower Av	                                   | ['YL']	            | 'C14' |
+| Farragut North	                               | ['RD']	            | 'A02' |
+| Farragut West	                                   | ['OR', 'SV', 'BL]	| 'C03' |
+| Federal Center SW	                               | ['OR', 'SV', 'BL]	| 'D04' |
+| Federal Triangle	                               | ['OR', 'SV', 'BL]	| 'D01' |
+| Foggy Bottom-GWU	                               | ['OR', 'SV', 'BL]	| 'C04' |
+| Forest Glen	                                   | ['RD']	            | 'B09' |
+| Fort Totten	                                   | ['RD']	            | 'B06' |
+| Fort Totten	                                   | ['YL', 'GR']	    | 'E06' |
+| Franconia-Springfield	                           | ['BL']	            | 'J03' |
+| Friendship Heights	                           | ['RD']	            | 'A08' |
+| Gallery Place	                                   | ['RD']	            | 'B01' |
+| Gallery Place	                                   | ['YL', 'GR']	    | 'F01' |
+| Georgia Av-Petworth	                           | ['YL', 'GR']       | 'E05' |
+| Glenmont	                                       | ['RD']	            | 'B11' |
+| Greenbelt	                                       | ['GR']	            | 'E10' |
+| Greensboro	                                   | ['SV']	            | 'N03' |
+| Grosvenor-Strathmore	                           | ['RD']	            | 'A11' |
+| Herndon	                                       | ['SV']	            | 'N08' |
+| Huntington	                                   | ['YL']	            | 'C15' |
+| Hyattsville Crossing	                           | ['GR']	            | 'E08' |
+| Innovation Center	                               | ['SV']	            | 'N09' |
+| Judiciary Sq	                                   | ['RD']	            | 'B02' |
+| King St-Old Town	                               | ['YL', 'BL']	    | 'C13' |
+| Landover	                                       | ['OR']	            | 'D12' |
+| L'Enfant Plaza	                               | ['OR', 'SV', 'BL]  | 'D03' |
+| L'Enfant Plaza	                               | ['YL', 'GR']	    | 'F03' |
+| Loudon Gateway	                               | ['SV']	            | 'N11' |
+| McLean	                                       | ['SV']	            | 'N01' |
+| McPherson Sq	                                   | ['OR', 'SV', 'BL]	| 'C02' |
+| Medical Center	                               | ['RD']	            | 'A10' |
+| Metro Center	                                   | ['RD']	            | 'A01' |
+| Metro Center	                                   | ['OR', 'SV', 'BL]	| 'C01' |
+| Minnesota Av	                                   | ['OR']	            | 'D09' |
+| Morgan Blvd	                                   | ['SV', 'BL']	    | 'G04' |
+| Mt Vernon Sq	                                   | ['YL', 'GR']	    | 'E01' |
+| Navy Yard-Ballpark	                           | ['GR']	            | 'F05' |
+| Naylor Rd	                                       | ['GR']	            | 'F09' |
+| New Carrollton	                               | ['OR']	            | 'D13' |
+| NoMa-Gallaudet U	                               | ['RD']	            | 'B35' |
+| North Bethesda	                               | ['RD']	            | 'A12' |
+| Pentagon	                                       | ['YL', 'BL']	    | 'C07' |
+| Pentagon City	                                   | ['YL', 'BL']	    | 'C08' |
+| Potomac Av	                                   | ['OR', 'SV', 'BL]	| 'D07' |
+| Potomac Yard	                                   | ['YL', 'BL']	    | 'C11' |
+| Reston Town Center	                           | ['SV']	            | 'N07' |
+| Rhode Island Av	                               | ['RD']	            | 'B04' |
+| Rockville	                                       | ['RD']	            | 'A14' |
+| Ronald Reagan Washington National Airport	       | ['YL', 'BL']	    | 'C10' |
+| Rosslyn	                                       | ['OR', 'SV', 'BL]	| 'C05' |
+| Shady Grove	                                   | ['RD']	            | 'A15' |
+| Shaw-Howard U	                                   | ['YL', 'GR']	    | 'E02' |
+| Silver Spring	                                   | ['RD']	            | 'B08' |
+| Smithsonian	                                   | ['OR', 'SV', 'BL]	| 'D02' |
+| Southern Av	                                   | ['GR']	            | 'F08' |
+| Spring Hill	                                   | ['SV']	            | 'N04' |
+| Stadium-Armory	                               | ['OR', 'SV', 'BL]	| 'D08' |
+| Suitland	                                       | ['GR']	            | 'F10' |
+| Takoma	                                       | ['RD']	            | 'B07' |
+| Tenleytown-AU	                                   | ['RD']	            | 'A07' |
+| Twinbrook	                                       | ['RD']	            | 'A13' |
+| Tysons	                                       | ['SV']	            | 'N02' |
+| U St	                                           | ['YL', 'GR']	    | 'E03' |
+| Union Station	                                   | ['RD']	            | 'B03' |
+| Van Dorn St	                                   | ['BL']	            | 'J02' |
+| Van Ness-UDC	                                   | ['RD']	            | 'A06' |
+| Vienna	                                       | ['OR']	            | 'K08' |
+| Virginia Sq-GMU	                               | ['OR', 'SV']	    | 'K03' |
+| Washington Dulles International Airport	       | ['SV']	            | 'N10' |
+| Waterfront	                                   | ['GR']	            | 'F04' |
+| West Falls Church	                               | ['OR']	            | 'K06' |
+| West Hyattsville	                               | ['GR']	            | 'E07' |
+| Wheaton	                                       | ['RD']	            | 'B10' |
+| Wiehle-Reston East	                           | ['SV']	            | 'N06' |
+| Woodley Park	                                   | ['RD']	            | 'A04' |
 
 ## Train Group Explanations
 A special thanks to [u/SandBoxJohn](https://www.reddit.com/user/SandBoxJohn) for these.
