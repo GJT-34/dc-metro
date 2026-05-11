@@ -1,4 +1,4 @@
-[I'm reworking the code right now, including an upgrade to CircuitPython 10. Until it's ready, don't follow the instructions on this page.]
+[I'm reworking the code for this right now, including an upgrade to CircuitPython 10. Until it's ready, don't follow the instructions on this page. The code for this project will be an abridged version of the code available at ![Washington Metro Trainboard](https://github.com/GJT-34/washington_metro_trainboard), and designed to run on the memory-limited MatrixPortal M4.]
 
 # Washington DC Metro Train Sign
 This project contains the source code to create your own Washington DC Metro sign, using data from WMATA's API for real-time rail predictions. It was written using CircuitPython targeting the [Adafruit Matrix Portal M4](https://www.adafruit.com/product/4745) and is optimized for 64x32 RGB LED matrices.
