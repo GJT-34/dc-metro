@@ -1,16 +1,66 @@
-# Configuration Options Explanations
+# Setting Up the Software
 
-The `config.py` file controls the behavior and appearance of the WMATA Metro Trainboard. Below is a breakdown of the available settings.
+## Installing the software
+
+[The photos below show the MatrixPanel M4, but the MatrixPanel S3 looks similar.]
+
+1. Connect the MatrixPanel to your computer using a USB-C cable. Double click the button on the board labeled _RESET_. The board should mount onto your computer as a storage volume, most likely named _MATRXS3BOOT_.
+    
+    ![Matrix Connected via USB](img/usb-connected.jpg)
+
+2. Flash your _Matrix Portal_ with the latest release of CircuitPython 10.
+    - Download the most recent 10.X.X version of the *.uf2 firmware from Adafruit, using the proper version for the [S3](https://circuitpython.org/board/adafruit_matrixportal_s3/), depending on which _Matrix Portal_ type you're using. If CircuitPython 10.X.X is no longer the current version, you can still find it using the links in the "Previous Versions of CircuitPython" section of the page in the prior link. Use the most recent 10.X.X. release available. 
+    - Drag the downloaded _.uf2_ file into the root of the _MATRIXBOOT_ or _MATRXS3BOOT_ volume.
+    - The board will automatically flash the version of CircuitPython and remount as _CIRCUITPY_.
+    - If something goes wrong, refer to the [Adafruit Documentation](https://learn.adafruit.com/adafruit-matrixportal-m4/install-circuitpython). Note that the S3 has some additional installation methods compared to the M4, as shown on the page (noted above) used to download CircuitPython software for the S3.
+
+3. Decompress the _lib.zip_ file from this repository into the root of the _CIRCUITPY_ volume. There should be one folder named _lib_, with a plethora of files underneath. You can delete _lib.zip_ from the _CIRCUITPY_ volume, as it's no longer needed.
+
+    ![Lib Decompressed](img/lib.png)
+
+4. Download this repository as a ZIP file by selecting the green 'Code' button at the top of this page, and then unzip the file.
+
+5. Copy all of the Python files from the downloaded repository into the root of the _CIRCUITPY_ volume.
+
+    ![Source Files](img/source.png)
+
+6. The board should now light up with a loading screen, but we've still got some work to do.
+
+    ![Loading Sign](img/bd4.jpg)
+
+## Getting a WMATA API Key
+
+1. Create a WMATA developer account on [WMATA's Developer Website](https://developer.wmata.com/signup/).
+
+2. After your account is created, add the _Default Tier_ subscription to your account on [this page](https://developer.wmata.com/products/5475f1b0031f590f380924fe).
+
+3. After doing this, you will be redirected to [your profile](https://developer.wmata.com/developer).
+
+4. Under the _Subscriptions_ section on your profile, select the **show** button beside the _Primary Key_. This is the key that allows the board to communicate with WMATA.
+
+## Setting Up the Board to Connect to WMATA
+
+1. Open the [settings.toml](src/settings.toml) file located in the root of the _CIRCUITPY_ volume.
+
+2. Fill in your wifi SSID and password and WMATA API key.
+
+3. Save this file. At this point, your board should refresh and connect to WMATA.
+
+## Configuring the Board
+
+Open the [config.py](src/config.py) file located in the root of the _CIRCUITPY_ volume. This file controls the behavior and appearance of the WMATA Metro Trainboard. Below is a breakdown of the available settings. There are many settings, but the ones you'll likely want to adjust are described first.
 
 The trainboard displays one or more screens in a rotation, according to the options you define in config.py. At the start of each rotation, the application evaluates which screen(s) should be in that rotation. Some screens, particularly the train arrival prediction screens, will be present in every rotation. Others, such as the listing of stations with elevator outages, can be configured to appear in rotation periodically or not at all.
 
 The train arrival prediction screens are customizable in several ways. Each train arrival prediction screen starts with information for one station, which can then be winnowed down further by several criteria. There also are several options that control the way information is provided on the train arrival prediction screens, including which header and columns of information are shown. 
 
-When editing config.py, be sure to follow the formatting the file uses.
+Be careful to use single quotes, brackets, and commas consistent with what is set out in the file.
 
-## Settings You Are Likely to Adjust
+If you enter this information correctly, then once save the file your board should refresh and provide you with the information you're looking for.
 
-### Train Arrival Prediction Screens
+### Settings You Are Likely to Adjust
+
+#### Train Arrival Prediction Screens
 
 The `train_arrival_screens` list defines what train arrival prediction information to display. Each entry is a python dictionary. There are two entries shown in the default config.py file, but you can have as many entries as you like. Each one becomes a separate screen in the rotation.
 
@@ -24,7 +74,7 @@ The `train_arrival_screens` list defines what train arrival prediction informati
 | `train_header` | Boolean | This determines whether a header is displayed the train arrival prediction screens. If True, the header will be a pre-defined, standard header ('LN CAR DST MIN'), unless you have defined an alternative header using in 'alt_header_title'. If False, no header will be displayed and the space will instead be used to display an additional train prediction, meaning up to four would be displayed instead of the usual three.
 | `alt_header_title` | String | This is an optional, custom name to display at the top of the train arrival prediction screens, in place of a standard, pre-defined header ('LN CAR DST MIN'). It requires header_type to be set to True for this to be displayed. If left blank, the standard, pre-defined header will be used instead. |
 
-### Rail Status, Rail Incident, and Elevator Outage Screens
+#### Rail Status, Rail Incident, and Elevator Outage Screens
 
 These options control the visibility of additional screens.
 
@@ -35,10 +85,9 @@ These options control the visibility of additional screens.
 | `rail_incident_lines` | List | `['OR', 'SV',]` | This can be used to limit the details of rail incidents to specific train lines. If left empty, it will show all detailed rail incidents. This setting only matters if 'rail_incident_display_frequency' is set to 0 or higher. |
 | `elevator_outage_display_frequency` | Integer | `1200` | This controls the display of screens listing stations with elevator outages. Setting this to 0 will ensure the screens appear every rotation (if there are outages to display), but most users will find this to be too frequent. Setting this to a positive integer determines the minimum number of seconds that must pass before the screens are re-added to the rotation. Setting this to -1 ensures that the screens do not appear at all. |
 
+### Settings You Are Less Likely to Adjust
 
-## Settings You Are Less Likely to Adjust
-
-### Display & UI Behavior
+#### Display & UI Behavior
 
 These settings related to how the screen rotation behaves and how long screens stay active.
 
@@ -51,7 +100,7 @@ These settings related to how the screen rotation behaves and how long screens s
 | `splash_rotation_speed` | Integer | `2` | This sets the number of seconds to show the splash transition screen. |
 | `dest_max_characters` | Integer | `8` | This sets the maximum number of characters to display for unchanged destination names on train arrival prediction screens. |
 
-### Wifi & API Settings
+#### Wifi & API Settings
 
 These settings are related to the establishment of a wifi connection and to API usage.
 
@@ -61,7 +110,7 @@ These settings are related to the establishment of a wifi connection and to API 
 | `metro_api_retries` | Integer | `3` | The number of times to try getting data from a WMATA Metro API before failing. |
 | `metro_api_fetch_intermission` | Integer | `20` | Minimum number of seconds between API calls to prevent rate-limiting. Note that none of the WMATA Metro APIs update more often than every 20 seconds. |
 
-### Visual Styling & Colors
+#### Visual Styling & Colors
 
 Colors are defined in Hex format (`0xRRGGBB`).
 
@@ -76,14 +125,14 @@ Colors are defined in Hex format (`0xRRGGBB`).
 | `train_line_color` | Dict | (Map) | This defines the specific color for every WMATA line code, to be used when `show_lines_in_their_colors` is set to True. |
 | `indicator_pixels_color` | List | (Colors) | This defines the colors that appear at the bottom row of the screen is response to button short- and long-presses. |
 
-### Arrow Directional Layout
+#### Arrow Directional Layout
 
 | Option | Default | Description |
 | --- | --- | --- |
 | `group_1_arrow_direction` | `'right'` | The icon direction for Group 1 tracks. |
 | `group_2_arrow_direction` | `'left'` | The icon direction for Group 2 tracks. |
 
-### Button Timing
+#### Button Timing
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
@@ -91,9 +140,9 @@ Colors are defined in Hex format (`0xRRGGBB`).
 | `long_blink_time` | float | `0.5` | Duration in seconds of a long indicator blink |
 | `short_blink_time` | float | `0.25` | Duration in seconds of a short indicator blink |
 
+### Appendix
 
-## Appendix
-### WMATA Metro Station Codes
+#### WMATA Metro Station Codes
 | Name                                             | Lines              | Code  |
 |--------------------------------------------------|--------------------|-------|
 | Addison Rd                                       | ['SV', 'BL',]       | 'G03' |
@@ -199,7 +248,7 @@ Colors are defined in Hex format (`0xRRGGBB`).
 | Wiehle-Reston East	                           | ['SV',]	            | 'N06' |
 | Woodley Park	                                   | ['RD',]	            | 'A04' |
 
-### Train Groups
+#### Train Groups
 A special thanks to [u/SandBoxJohn](https://www.reddit.com/user/SandBoxJohn) for these.
 
 | Line       | Train Group | Destination                                            |
