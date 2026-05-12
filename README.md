@@ -1,18 +1,40 @@
 [I'm reworking the code for this right now, including an upgrade to CircuitPython 10. Until it's ready, don't follow the instructions on this page. The code for this project will be an abridged version of the code available at ![Washington Metro Trainboard](https://github.com/GJT-34/washington_metro_trainboard), and designed to run on the memory-limited MatrixPortal M4.]
 
-# Washington DC Metro Train Sign
-This project contains the source code to create your own Washington DC Metro sign, using data from WMATA's API for real-time rail predictions. It was written using CircuitPython targeting the [Adafruit Matrix Portal M4](https://www.adafruit.com/product/4745) and is optimized for 64x32 RGB LED matrices.
-
-Some of its features include:
-- A customized font that attempts to mimic the font that Metro uses on its signs.
-- The ability to display multiple "screens," which can be used to display information on more than one station or on separate groups (i.e., tracks or platforms) at the same station. The board will auto-rotate through the screens on a configurable basis, and manual rotation is provided using the UP (freeze/unfreeze rotation) and DOWN (next screen) buttons.
-- The ability to exclude trains that will arrive at a station before you can walk to that station.
-- Multiple options for displaying line, car length, and group/track information.
-- Multiple options for what is displayed in the header for each screen, and for omitting the header altogether.
+# WMATA Metro Train Board
+This project contains the source code to create your own WMATA Metro Train Board. It was written using CircuitPython targeting the [Adafruit Matrix Portal S3](https://www.adafruit.com/product/5778) and 64x32 RGB LED matrices. Features include:
+- The ability to auto-rotate through multiple "screens," which can be used to display information on more than one station or on separate groups (i.e., tracks or platforms) at the same station
+- The ability to control the screens through buttons on the MatrixPortal in addition to auto-rotation.
+- A font customized to resemble the font WMATA uses on its train boards.
+- The ability to prioritize the display of train that are predicted to arrive at a station only after you can get to that station.
+- Multiple options for displaying train line, car length, and group/track information.
+- Multiple options for what is displayed in the header for each train arrival prediction screen, and for omitting the header altogether.
+- The ability to display information on Metro's status, rail alerts, and elevator outages.
 
 ![bd1](img/bd1.jpg)
 ![bd2](img/bd2.jpg)
 ![bd3](img/bd3.jpg)
+
+# Background
+
+Metro's first generation of digital train arrival boards--which WMATA calls passenger information display system (PIDS) monitors--have been a familiar sight since their introduction in October 2000. They've been ubiquitous at Metro stations, typically with a couple boards at each track and sometimes at one or more at station entrances as well. Many millions of riders have seem them, given that Metro routinely has averaged over 100 million rides a year since these train boards were implemented. 
+
+The boards consist of LED panels with extremely limited pixel density and color capabilities. Despite having a diagonal size of around three feet, they only have a resolution of 192x68 pixels. To put that into perspective, a typical phone these days will have typical pixel density of 300 to over 500 pixels per inch (PPI). Metro's panels also show only red, green, and yellow colors. Metro has begun phasing out these train boards in favor of a new generation of displays, but the idea of a do-it-yourself, old-school Metro train arrival board still has some appeal. 
+
+In November 2020, a ![project](https://github.com/metro-sign/dc-metro) landed on github that allowed people to make their own Metro train arrival boards. The only hardware needed was a LED panel and a controller device called the MatrixPortal M4, which could be purchased together for around $65 on Adafruit, before shipping and taxes. Anyone looking to implement this project also needed to obtain a free API key from WMATA. The LED panel recommended for that project has a pixel resolution of just 64x32. That's not an exact match for what Metro uses, but it's similar. The project received some online attention, such as this DCist ![article](https://dcist.com/story/23/03/16/heres-how-to-build-your-own-mini-metro-arrival-screen-for-your-home-or-office/). 
+
+I became one of several people who decided to set up forks on github of the original project, which has not been updated since 2000. Initially, my contribution was to edit the default font to more closely resemble the font on Metro's train boards. This was a little tricky not only because of the space considerations of the 64x32 screen, but because it turned out Metro's train boards use multiple fonts with subtle differences. You can see some examples in these train board pics:
+
+![font1_circles](img/font1_circles.webp)
+![font2_circles](img/font2_circles.webp)
+
+I became aware of this project in February 2023 and was intrigued enough to give it a shot. It took a little trial and error, but I got it working. I was happy with the results but wanted to make some changes. 
+
+My primary contribution was to edit the default font to more closely resemble the font on Metro's train boards. This was a little tricky not only because of space considerations, but because it turned out Metro uses multiple fonts on its older boards. This meant that I was shooting at a moving target, but eventually I picked the font version I saw most often and focused on copying that one.
+
+Once I completed making my changes, I happily used the little panel on almost a daily basis with making further edits, but after moving to near a different Metro station I decided to take another swing at the project and see what improvements I might be able to make.
+
+I'll let you judge the results for yourself, but one difference ought to be called out in particular: One of the hardware requirements for this project has changed. The project originally called for the use of a device called the MatrixPortal M4, which controlled the LED panel. The MatrixPortal S3 has since replaced the M4. The S3 is available on Adafruit and can also be picked up at Micro Center. However, the code I've posted works on both the M4 and S3.
+
 
 # How To
 ## Hardware
