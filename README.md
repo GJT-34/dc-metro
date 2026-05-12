@@ -56,6 +56,6 @@ Anyway, let's get to it.
 - Zip ties _(optional)_
 
 ## Setup and Usage
-- ![Setting up the hardware](https://github.com/GJT-34/HARDWARE.md)
-- ![Setting up the software](https://github.com/GJT-34/SOFTWARE.md)
-- ![Using the train board](https://github.com/GJT-34/USAGE.md)
+- ![Setting up the hardware](https://github.com/GJT-34/wmata_metro_trainboard/blob/main/HARDWARE.md)
+- ![Setting up the software](https://github.com/GJT-34/wmata_metro_trainboard/blob/main/SOFTWARE.md)
+- ![Using the train board](https://github.com/GJT-34/wmata_metro_trainboard/blob/main/USAGE.md)
