@@ -54,3 +54,8 @@ Anyway, let's get to it.
 - A hot glue gun _(optional)_
 - Tape _(optional)_
 - Zip ties _(optional)_
+
+## Setup and Usage
+- ![Setting up the hardware](https://github.com/GJT-34/HARDWARE.md)
+- ![Setting up the software](https://github.com/GJT-34/SOFTWARE.md)
+- ![Using the train board](https://github.com/GJT-34/USAGE.md)
