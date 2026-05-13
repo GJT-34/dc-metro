@@ -6,17 +6,17 @@
 
 2. Flash your _Matrix Portal_ with the latest release of CircuitPython 10.
 - Download the current 10.X.X version of the *.uf2 firmware from Adafruit, using the proper version for the [S3](https://circuitpython.org/board/adafruit_matrixportal_s3/), depending on which _Matrix Portal_ type you're using. If CircuitPython 10 is no longer the current version, you can still find it using the links in the "Previous Versions of CircuitPython" section of the page in the prior link. Use the most recent 10.X.X. release available. 
-- Drag the downloaded _.uf2_ file into the root of the _MATRIXBOOT_ or _MATRXS3BOOT_ volume.
+- Drag the downloaded _.uf2_ file into the root of the _MATRXS3BOOT_ volume.
 - The board will automatically flash the version of CircuitPython and remount as _CIRCUITPY_.
 - If something goes wrong, refer to the [Adafruit Documentation](https://learn.adafruit.com/adafruit-matrixportal-m4/install-circuitpython). Note that the S3 has some additional installation methods compared to the M4, as shown on the page (noted above) used to download CircuitPython software for the S3.
 
-3. Decompress the _lib.zip_ file from this github repository (wmata_metro_trainboard) into the root of the _CIRCUITPY_ volume. There should be one folder named _lib_, with a plethora of files underneath. You can delete _lib.zip_ from the _CIRCUITPY_ volume, as it's no longer needed.
+3. Download this repository (wmata_metro_trainboard) as a ZIP file by selecting the green 'Code' button at the top of this page, selecting the "Local" tab, and selecting the "Download ZIP" link.
+
+4. Where you have downloaded the ZIP file on your computuer, decompress it. In the resulting folder will be a file called _lib.zip_. Copy this to the root of the _CIRCUITPY_ volume, and then decompress it. There should be one folder named _lib_, with multiple files in it. After creating the _lib_ folder, you can delete _lib.zip_ from the _CIRCUITPY_ volume, as it's no longer needed.
 
     ![Lib Decompressed](img/lib.png)
 
-4. Download this repository as a ZIP file by selecting the green 'Code' button at the top of this page, and then unzip the file.
-
-5. Copy all of the Python files from the downloaded repository into the root of the _CIRCUITPY_ volume.
+5. The ZIP file you downloaded from this repository also contains a folder called _src_. Copy all of the Python files from that folder into the root of the _CIRCUITPY_ volume.
 
     ![Source Files](img/source.png)
 
