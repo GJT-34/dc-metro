@@ -31,7 +31,7 @@ The software now has more features than the original 2020 version, as noted at t
 
 The goal this project is to build a display that resembles a Metro train board, but I've made a few exceptions. These include changes needed to account for the lack of space in the LED panel, to provide information that Metro's train boards don't provide, and to remove information that Metro's train boards provide, but which you may not want. 
 
-Anyway, let's get to it.
+Let's get to it.
 
 ## Prerequisites
 
