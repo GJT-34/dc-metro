@@ -5,7 +5,7 @@
     ![Matrix Connected via USB](img/usb-connected.jpg)
 
 2. Flash your _Matrix Portal_ with the latest release of CircuitPython 10.
-- Download the current 10.X.X version of the *.uf2 firmware from Adafruit, using the proper version for the [S3](https://circuitpython.org/board/adafruit_matrixportal_s3/), depending on which _Matrix Portal_ type you're using. If CircuitPython 10 is no longer the current version, you can still find it using the links in the "Previous Versions of CircuitPython" section of the page in the prior link. Use the most recent 10.X.X. release available. 
+- Download the current 10.X.X version of the *.uf2 firmware from Adafruit, using the proper version for the [MatrixPortal S3](https://circuitpython.org/board/adafruit_matrixportal_s3/). If CircuitPython 10 is no longer the current version, you can still find it using the links in the "Previous Versions of CircuitPython" section of the page in the prior link. Use the most recent 10.X.X. release available. 
 - Drag the downloaded _.uf2_ file into the root of the _MATRXS3BOOT_ volume.
 - The board will automatically flash the version of CircuitPython and remount as _CIRCUITPY_.
 - If something goes wrong, refer to the [Adafruit Documentation](https://learn.adafruit.com/adafruit-matrixportal-m4/install-circuitpython). Note that the S3 has some additional installation methods compared to the M4, as shown on the page (noted above) used to download CircuitPython software for the S3.
