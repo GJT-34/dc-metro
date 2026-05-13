@@ -2,14 +2,14 @@
 
 # WMATA Metro Train Board
 
-This project contains the source code to create your own WMATA Metro Train Board. It was written using CircuitPython targeting the [Adafruit Matrix Portal S3](https://www.adafruit.com/product/5778) and 64x32 RGB LED matrices. Features include:
-- The ability to auto-rotate through multiple "screens," which can be used to display information on more than one station or on separate groups (i.e., tracks or platforms) at the same station
-- The ability to control the screens through buttons on the MatrixPortal in addition to auto-rotation.
-- A font customized to resemble the font WMATA uses on its train boards.
-- The ability to prioritize the display of train that are predicted to arrive at a station only after you can get to that station.
-- Multiple options for displaying train line, car length, and group/track information.
-- Multiple options for what is displayed in the header for each train arrival prediction screen, and for omitting the header altogether.
-- The ability to display information on Metro's status, rail alerts, and elevator outages.
+This project contains the source code to create your own Washington Metropolitan Area Transit Authority (WMATA) Metro Train Board. It was written using CircuitPython targeting the [Adafruit Matrix Portal S3](https://www.adafruit.com/product/5778) and 64x32 RGB LED matrices. Features include:
+- The ability to auto-rotate through multiple "screens," including train arrival prediction screens in which each screen is customized to a specific station and particular train lines and groups (i.e., tracks or platforms) at that station
+- Multiple options for displaying train line, car length, and group/track information
+- Multiple options for what is displayed in the header for each train arrival prediction screen, and for omitting the header altogether
+- The ability to prioritize the display of trains that are predicted to arrive at a station only after you can get to that station
+- The ability to display information on Metro's status, rail alerts, and elevator outages
+- The ability to control the screens through buttons on the MatrixPortal in addition to auto-rotation
+- A font customized to resemble the font WMATA uses on its train boards
 
 ![bd1](img/bd1.jpg)
 ![bd2](img/bd2.jpg)
