@@ -39,7 +39,7 @@ Anyway, let's get to it.
 ### Hardware
 
 - A [Matrix Portal S3](https://www.adafruit.com/product/5778). You can buy the S3 directly from Adafruit at the link above, but I found mine at Micro Center. 
-- A **64x32 RGB LED matrix** compatible with the _Matrix Portal_. The version in the pictures above is from my 5mm panel.
+- A **64x32 RGB LED matrix** compatible with the _Matrix Portal_. The version in the pictures above is from my 4mm panel.
     - [64x32 RGB LED Matrix - 3mm pitch](https://www.adafruit.com/product/2279)
     - [64x32 RGB LED Matrix - 4mm pitch](https://www.adafruit.com/product/2278)
     - [64x32 RGB LED Matrix - 5mm pitch](https://www.adafruit.com/product/2277)
