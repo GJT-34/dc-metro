@@ -1,4 +1,4 @@
-[I'm reworking the code for this right now, including an upgrade to CircuitPython 10. Until it's ready, don't follow the instructions on this page. The code for this project will be an abridged version of the code available at ![Washington Metro Trainboard](https://github.com/GJT-34/washington_metro_trainboard), and designed to run on the memory-limited MatrixPortal M4.]
+[I'm reworking the code for this right now, including an upgrade to CircuitPython 10. Until it's ready, don't follow the instructions on this page. The code for this project will be an abridged version of the code available at [Washington Metro Trainboard](https://github.com/GJT-34/washington_metro_trainboard), and designed to run on the memory-limited MatrixPortal M4.]
 
 # WMATA Metro Train Board
 
@@ -21,7 +21,7 @@ Metro's first generation of digital train arrival boards--which WMATA calls pass
 
 The boards consist of LED panels with extremely limited pixel density and color capabilities. Despite having a diagonal size of around three feet, they only have a resolution of 192x68 pixels. To put that into perspective, a typical phone these days will have typical pixel density of 300 to over 500 pixels per inch (PPI). Metro's panels also show only red, green, and yellow colors. Metro has begun phasing out these train boards in favor of a new generation of displays, but the idea of a do-it-yourself, old-school Metro train arrival board still has some appeal. 
 
-In November 2020, a ![project](https://github.com/metro-sign/dc-metro) landed on github that allowed people to make their own Metro train arrival boards. The only hardware needed was a LED panel and a controller device called the MatrixPortal M4, which could be purchased together for around $65 on Adafruit, before shipping and taxes. Anyone looking to implement this project also needed to obtain a free API key from WMATA. The LED panel recommended for that project has a pixel resolution of just 64x32. That's not an exact match for what Metro uses, but it's similar. The project received some online attention, such as this DCist ![article](https://dcist.com/story/23/03/16/heres-how-to-build-your-own-mini-metro-arrival-screen-for-your-home-or-office/). 
+In November 2020, a [project](https://github.com/metro-sign/dc-metro) landed on github that allowed people to make their own Metro train arrival boards. The only hardware needed was a LED panel and a controller device called the MatrixPortal M4, which could be purchased together for around $65 on Adafruit, before shipping and taxes. Anyone looking to implement this project also needed to obtain a free API key from WMATA. The LED panel recommended for that project has a pixel resolution of just 64x32. That's not an exact match for what Metro uses, but it's similar. The project received some online attention, such as this DCist [article](https://dcist.com/story/23/03/16/heres-how-to-build-your-own-mini-metro-arrival-screen-for-your-home-or-office/). 
 
 I became one of several people who decided to set up forks on github of the original project, which has not been updated since 2000. At the time, my main contribution was to edit the default font to more closely resemble the font on Metro's train boards. This was a little tricky not only because of the space considerations of the 64x32 screen, but because it turned out Metro's train boards use multiple fonts with subtle differences. You can see some examples in these train board pics:
 
@@ -38,7 +38,7 @@ Anyway, let's get to it.
 
 ### Hardware
 
-- A ![Matrix Portal S3](https://www.adafruit.com/product/5778). You can buy the S3 directly from Adafruit at the link above, but I found mine at Micro Center. 
+- A [Matrix Portal S3](https://www.adafruit.com/product/5778). You can buy the S3 directly from Adafruit at the link above, but I found mine at Micro Center. 
 - A **64x32 RGB LED matrix** compatible with the _Matrix Portal_. The version in the pictures above is from my 5mm panel.
     - [64x32 RGB LED Matrix - 3mm pitch](https://www.adafruit.com/product/2279)
     - [64x32 RGB LED Matrix - 4mm pitch](https://www.adafruit.com/product/2278)
@@ -47,7 +47,7 @@ Anyway, let's get to it.
 - A **USB-C power supply**. 15w phone adapters (5V/3A) should work fine, while underpowered adapters can lead to MatrixPortal not running properly, or at all.
 - A **USB-C cable** that can connect your computer/power supply to the MatrixPortal. You'll be transferring some files to the MatrixPortal, so make sure it's a USB-C cable that handle data transfers, not just power delivery.
 - A **3-D printed case** that can hold the MatrixPortal and LED panel. This is optional, but it helps hide the wires behind the LED panel. I have one, but I don't recall where I got the design from.
-- A ![LED diffusion acrylic panel](https://www.adafruit.com/product/4594). This is also optional, but it helps tone down the lights on the LED panel. This is useful because the lights are far brighter than the pictures suggest. 
+- A [LED diffusion acrylic panel](https://www.adafruit.com/product/4594). This is also optional, but it helps tone down the lights on the LED panel. This is useful because the lights are far brighter than the pictures suggest. 
 
 ### Tools
 - A small phillips head screwdriver
