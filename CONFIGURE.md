@@ -30,6 +30,10 @@ The `train_arrival_screens` list defines what train arrival prediction informati
 | --- | --- | --- |
 | ![fc1](img/fc1.webp) | ![fc2](img/fc2.webp) | ![fc3](img/fc3.webp) |
 
+| 'train_header': True & 'alt_header': '' | 'train_header': True & 'alt_header': 'Court House'| 'train_header': False |
+| --- | --- | --- |
+| ![fc1](img/fc1.webp) | ![fc2](img/fc2.webp) | ![fc3](img/fc3.webp) |
+
 ### Rail Status, Rail Incident, and Elevator Outage Screens
 
 These options control the visibility of additional screens.
