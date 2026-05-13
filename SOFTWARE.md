@@ -1,6 +1,6 @@
 # Installing the Software
 
-1. Connect the MatrixPanel to your computer using a USB-C cable. Double click the button on the board labeled _RESET_. The board should mount onto your computer as a storage volume, most likely named _MATRXS3BOOT_.
+1. Connect the MatrixPortal to your computer using a USB-C cable. Double click the button on the MatrixPortal labeled _RESET_. The MatrixPortal should mount onto your computer as a storage volume, most likely named _MATRXS3BOOT_.
     
     ![Matrix Connected via USB](img/usb-connected.jpg)
 
