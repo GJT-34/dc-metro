@@ -10,7 +10,7 @@ Be careful to use single quotes, brackets, and commas consistent with what is se
 
 If you enter this information correctly, then once save the file your board should refresh and provide you with the information you're looking for.
 
-## Settings You Are Likely to Adjust
+## Settings You're Likely to Adjust
 
 ### Train Arrival Prediction Screens
 
@@ -37,7 +37,7 @@ These options control the visibility of additional screens.
 | `rail_incident_lines` | List | `['OR', 'SV',]` | This can be used to limit the details of rail incidents to specific train lines. If left empty, it will show all detailed rail incidents. This setting only matters if 'rail_incident_display_frequency' is set to 0 or higher. |
 | `elevator_outage_display_frequency` | Integer | `1200` | This controls the display of screens listing stations with elevator outages. Setting this to 0 will ensure the screens appear every rotation (if there are outages to display), but most users will find this to be too frequent. Setting this to a positive integer determines the minimum number of seconds that must pass before the screens are re-added to the rotation. Setting this to -1 ensures that the screens do not appear at all. |
 
-## Settings You Are Less Likely to Adjust
+## Settings You're Less Likely to Adjust
 
 ### Display & UI Behavior
 
