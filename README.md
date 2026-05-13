@@ -28,7 +28,7 @@ I became one of several people who decided to set up forks on github of the orig
 ![font1_circles](img/font1_circles.webp)
 ![font2_circles](img/font2_circles.webp)
 
-I've added several features recently, as noted at the top of this document. One consequence of the changes is that one of the hardware requirements for this project has changed. The project originally called for the use of the MatrixPortal M4 to control the LED panel. Because the additional features use more memory than the original version, this code is designed to run on the MatrixPortal S3. The S3 has far more memory than the M4, which is no longer for sale.
+The software now has more features than the original 2020 version, as noted at the top of this document. A consequence of this is that one of the hardware requirements for this project has changed. The project originally called for the use of the MatrixPortal M4 to control the LED panel. Because the additional features use more memory than the original version, this code is designed to run on the MatrixPortal S3. The S3 has far more memory than the M4, which is no longer for sale.
 
 The goal this project is to build a display that resembles a Metro train board, but I've made a few exceptions. These include changes needed to account for the lack of space in the LED panel, to provide information that Metro's train boards don't provide, and to remove information that Metro's train boards provide, but which you may not want. 
 
