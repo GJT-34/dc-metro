@@ -47,7 +47,7 @@ Anyway, let's get to it.
 - A **USB-C power supply**. 15w phone adapters (5V/3A) should work fine, while underpowered adapters can lead to MatrixPortal not running properly, or at all.
 - A **USB-C cable** that can connect your computer/power supply to the MatrixPortal. You'll be transferring some files to the MatrixPortal, so make sure it's a USB-C cable that handle data transfers, not just power delivery.
 - A **3-D printed case** that can hold the MatrixPortal and LED panel. This is optional, but it helps hide the wires behind the LED panel. I have one, but I don't recall where I got the design from.
-- A [LED diffusion acrylic panel](https://www.adafruit.com/product/4594). This is also optional, but it helps tone down the lights on the LED panel. This is useful because the lights are far brighter than the pictures suggest. 
+- A [LED diffusion acrylic panel](https://www.adafruit.com/product/4594). This is also optional, but it helps tone down the lights on the LED panel. This is useful because the lights are much brighter than the pictures suggest. 
 
 ### Tools
 - A small phillips head screwdriver
