@@ -29,7 +29,7 @@
 
     ![Source Files](img/file_manager.webp)
 
-6. The board should now light up and say "Loading..." and then begin repeatedly trying to connect to wifi.
+6. The board should now light up and say "Loading..." and then begin trying to connect to wifi.
   
 If everything has gone successfully, after a few seconds your board should connect to wifi and begin displaying data. We still need to edit the configuration so it shows the right data, though. That's the next step.
 
