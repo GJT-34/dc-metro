@@ -17,7 +17,7 @@
 - After doing this, you will be redirected to [your profile](https://developer.wmata.com/profile).
 - Under the _Subscriptions_ section on your profile, select the _show_ link beside the _Primary Key_. This is the key that allows the board to communicate with WMATA. Keep this handy, as you'll need this shortly.
 
-4. Download the files in this repository (i.e., wmata_metro_train_board) as a ZIP file by selecting the green _Code_ button at the top of this page, selecting the _Local_ tab, and selecting the _Download ZIP_ link.
+4. Download the files in this repository (i.e., wmata_metro_train_board) as a ZIP file by selecting the green _Code_ button at the top of the [home (README) page](https://github.com/GJT-34/wmata_metro_train_board), selecting the _Local_ tab, and selecting the _Download ZIP_ link.
 
 5. Where you have downloaded the ZIP file on your computer, decompress it. It will create a new folder on your computer called _wmata_metro_train_board-main_.
    
