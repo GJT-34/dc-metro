@@ -1,4 +1,4 @@
-[I'm reworking the code for this right now, including an upgrade to CircuitPython 10. Until it's ready, don't follow the instructions on this page. The code for this project will be an abridged version of the code available at [Washington Metro Trainboard](https://github.com/GJT-34/washington_metro_trainboard), and designed to run on the memory-limited MatrixPortal M4.]
+[I'm reworking the code for this right now, including an upgrade to CircuitPython 10. Until it's ready, don't follow the instructions on this page.]
 
 # WMATA Metro Train Board
 
