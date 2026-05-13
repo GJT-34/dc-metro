@@ -29,7 +29,7 @@ The `train_arrival_screens` list defines what train arrival prediction informati
 <p align="center">Examples of `first_columns` options</p>
 | Option 1 | Option 2 | Option 3 |
 | --- | --- | --- |
-
+| pic | pic | pic |
 
 ### Rail Status, Rail Incident, and Elevator Outage Screens
 
