@@ -1,4 +1,5 @@
-## Part 1: Prepare the Board
+# Setting Up the Hardware
+
 1. Use a hot glue gun to cover the sharp screws on the right-hand side of the 64x32 LED matrix, if present. This step is optional, but it may prevent wire chafing later on.
 
     ![64x32 Matrix with Hot Glue on Screws](img/base-board.jpg)
@@ -23,3 +24,5 @@
 6. You can use tape or zip ties to prevent the cables from flopping around.
 
     ![64x32 Matrix with Cable Management](img/cable-management.jpg)
+
+Next: ![Installing the software](https://github.com/GJT-34/wmata_metro_trainboard/blob/main/SOFTWARE.md)
