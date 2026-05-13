@@ -221,4 +221,4 @@ A special thanks to [u/SandBoxJohn](https://www.reddit.com/user/SandBoxJohn) for
 | YL, GR     | 2           | Huntington, Branch Av                                  |
 | N/A        | 3           | Center Platform at Ronald Reagan Washington National Airport, West Falls Church |
 
-Next: ![Using the train board](https://github.com/GJT-34/wmata_metro_trainboard/blob/main/USAGE.md)
+Next: [Using the train board](https://github.com/GJT-34/wmata_metro_trainboard/blob/main/USAGE.md)
