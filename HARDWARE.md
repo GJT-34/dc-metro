@@ -27,4 +27,4 @@
 
     ![64x32 Matrix with Cable Management](img/cable-management.jpg)
 
-Next: ![Installing the software](https://github.com/GJT-34/wmata_metro_train_board/blob/main/SOFTWARE.md)
+Next: [Installing the software](https://github.com/GJT-34/wmata_metro_train_board/blob/main/SOFTWARE.md)
