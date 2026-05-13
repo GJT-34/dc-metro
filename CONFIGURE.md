@@ -68,7 +68,7 @@ These settings are related to the establishment of a wifi connection and to API 
 | --- | --- | --- | --- |
 | `wifi_max_attempts` | Integer | `5` | Number of times to attempt a wifi connection before failing. |
 | `metro_api_retries` | Integer | `3` | The number of times to try getting data from a WMATA Metro API before failing. |
-| `metro_api_fetch_intermission` | Integer | `20` | Minimum number of seconds between API calls to prevent rate-limiting. Note that none of the WMATA Metro APIs update more often than every 20 seconds. |
+| `metro_api_fetch_intermission` | Integer | `20` | Minimum number of seconds between API calls using the same inputs to prevent rate-limiting. Note that none of the WMATA Metro APIs update more often than every 20 seconds. |
 
 ### Visual Styling & Colors
 
