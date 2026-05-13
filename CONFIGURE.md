@@ -27,7 +27,7 @@ The `train_arrival_screens` list defines what train arrival prediction informati
 | `alt_header_title` | String | This is an optional, custom name to display at the top of the train arrival prediction screens, in place of a standard, pre-defined header (such as "LN CAR DST MIN"). It requires `train_header' to be set to True for this to be displayed. If left blank, the standard, pre-defined header will be used instead. |
 
 <p align="center">Examples of `first_columns` options</p>
-|Option 1|Option 2|Option 3|
+| Option 1 | Option 2 | Option 3 |
 | --- | --- | --- |
 
 
