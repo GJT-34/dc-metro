@@ -1,6 +1,6 @@
 # Editing the Configuration File
 
-Open the [config.py](src/config.py) file located in the root of the _CIRCUITPY_ volume. This file controls the behavior and appearance of the train board. Below is a breakdown of the available settings. There are many settings, but the ones you'll likely want to adjust are that handful that are described first.
+Open the [config.py](src/config.py) file located in the root of the Matrix Portal's _CIRCUITPY_ volume. This file controls the behavior and appearance of the train board. Below is a breakdown of the available settings. There are many settings, but the ones you'll likely want to adjust are that handful that are described first.
 
 The train board displays one or more screens in a rotation, according to the options you define in _config.py_. At the start of each rotation, the application evaluates which screen(s) should be in that rotation. Some screens, particularly the train arrival prediction screens, will be present in every rotation. Others, such as the listing of stations with elevator outages, can be configured to appear in rotation periodically or not at all.
 
@@ -20,11 +20,11 @@ The `train_arrival_screens` list defines what train arrival prediction informati
 | --- | --- | --- |
 | `station_code` | String | This refers to a WMATA train station code (e.g., `'K01',` for Court House). See the [WMATA Metro Station Codes](https://github.com/GJT-34/wmata_metro_train_board/blob/main/config_options.md#wmata-metro-station-codes) subsection in the Appendix below for a listing of station codes. Information can be displayed for only one station per screen. |
 | `lines` | List | This limits what is displayed to specific train lines (e.g., `['OR', 'SV',]`) for a given station. |
-| `groups` | List | This limits the display to specific groups (i.e., tracks) (almost always `[1,]`, `[2,]`, or `[1, 2,]`). See the [Train Groups](https://github.com/GJT-34/wmata_metro_train_board/blob/main/config_options.md#train-groups) subsection in the Appendix below for a listing of how tracks are organized for each train line. Note that if you only show trains for one track at a given station, you may not see any train results if Metro is single-tracking and using the other track to do so! However, you can address this by showing both groups on a single screen, or by showing each group on a different screen. |
+| `groups` | List | This limits the display to specific groups (i.e., tracks) (almost always `[1,]`, `[2,]`, or `[1, 2,]`) at a given station. See the [Train Groups](https://github.com/GJT-34/wmata_metro_train_board/blob/main/config_options.md#train-groups) subsection in the Appendix below for a listing of how tracks are organized. Note that if you only show trains for one track at a given station, you may not see any train results if Metro is single-tracking and using the other track to do so! However, you can prevent this by showing both groups on a single screen, or by showing each group on a different screen. |
 | `transit_time` | Integer | This refers to the number of minutes it takes you to travel to the station; trains arriving before this time will be deprioritized in favor of showing those arriving later. However, those arriving before this time will still shown if space allows. For instance, if there are trains arriving in 4, 5, 14, and 15 minutes and your transit time is 10 minutes, then the trains shown will be those arriving in 5, 14, and 15 minutes. (If you configure the screen so that no header is used, then all four trains will be shown.) | 
-| `first_columns` | Integer | This is an internal setting for UI layout columns. Options are: <BR><BR>1. Shows a colored arrow to denote the train line and track, and also shows car length, destination and arrival time. This option packs the most information into the display.<BR><BR>2. Shows two-letter abbreviations for the train line, and also shows destination and arrival time. It doesn't show which track each train is on or show the number of cars in each train, but it's the option that most closely resembles a Metro train arrival board.<BR><BR>3. Shows the first letter of the train line (i.e., "R" for Red), shows a colored arrow to denote the track each train is on, and also shows destination and arrival time. This option doesn't include information on the number of cars, but the use of letters for identifying the train line (not just the colored arrow, which also incidates the track) means it could be a fit for someone who's colorblind.|
+| `first_columns` | Integer | This is an internal setting for UI layout columns. Options are: <BR><BR>1. Shows a colored arrow to denote the train line and track, and also shows car length, destination and arrival time. This option packs the most information into the display.<BR><BR>2. Shows two-letter abbreviations for the train line, and also shows destination and arrival time. It doesn't show which track each train is on or show the number of cars in each train, but it's the option that most closely resembles a Metro train arrival board.<BR><BR>3. Shows the first letter of the train line (i.e., "R" for Red), shows a colored arrow to denote the track each train is on, and also shows destination and arrival time. This option doesn't include information on the number of cars, but the use of letters for identifying the train line (not just the colored arrow, which also incidates the track) means it could be a fit for someone who's colorblind. |
 | `train_header` | Boolean | This determines whether a header is displayed the train arrival prediction screens. If True, the header will be a pre-defined, standard header (either "LN CAR DST MIN" or "LN DEST MIN"), unless you have defined an alternative header using in `alt_train_header`. If False, no header will be displayed and the space will instead be used to display an additional train prediction, meaning up to four would be displayed instead of the usual three.
-| `alt_train_header` | String | This is an optional, custom name to display at the top of the train arrival prediction screens, in place of a standard, pre-defined header (either "LN CAR DST MIN" or "LN DEST MIN"). It requires `train_header' to be set to True for this to be displayed. If left blank, the standard, pre-defined header will be used instead. |
+| `alt_train_header` | String | This is an optional, custom name to display at the top of the train arrival prediction screens, in place of a standard, pre-defined header (either "LN CAR DST MIN" or "LN DEST MIN"). It requires `train_header' to be set to True for this to be displayed. If 'alt_train_header` is left blank, then the standard, pre-defined header will be used instead. |
 
 | 'first_columns': 1 | 'first_columns': 2 | 'first columns': 3 |
 | --- | --- | --- |
@@ -42,7 +42,7 @@ These options control the visibility of additional screens.
 | --- | --- | --- | --- |
 | `rail_status_display_frequency` | Integer | `120` | This controls the display of a rail status summary screen, which provides an at-a-glance view as to whether any trains have an active alert (shown with a "!") or not (shown with a "-"). Setting this to 0 will ensure the screen appears every rotation, but most users will find this to be too frequent. Setting this to a positive integer determines the minimum number of seconds that must pass before the screen is re-added to the rotation. Setting this to -1 ensures that it does not appear at all. Examples of what this page looks like are shown below, after the [Visual Styling & Colors](https://github.com/GJT-34/wmata_metro_train_board/blob/main/CONFIGURE.md#visual-styling--colors) section. |
 | `rail_incident_display_frequency` | Integer | `600` | This controls the display of detailed rail incident (i.e., alerts and advisory) screens. Setting this to 0 will ensure the screens appear every rotation (if there are incidents to display), but most users will find this to be too frequent. Setting this to a positive integer determines the minimum number of seconds that must pass before the screens are re-added to the rotation. Setting this to -1 ensures that the screens do not appear at all. |
-| `rail_incident_lines` | List | `['OR', 'SV',]` | This can be used to limit the details of rail incidents to specific train lines. If left empty, it will show all detailed rail incidents. This setting only matters if 'rail_incident_display_frequency' is set to 0 or higher. |
+| `rail_incident_lines` | List | `['OR', 'SV',]` | This can be used to limit the details of rail incidents to specific train lines. If left empty (`[]`), it will show all detailed rail incidents. This setting only matters if 'rail_incident_display_frequency' is set to 0 or higher. |
 | `elevator_outage_display_frequency` | Integer | `1200` | This controls the display of screens listing stations with elevator outages. Setting this to 0 will ensure the screens appear every rotation (if there are outages to display), but most users will find this to be too frequent. Setting this to a positive integer determines the minimum number of seconds that must pass before the screens are re-added to the rotation. Setting this to -1 ensures that the screens do not appear at all. |
 
 ## Settings You're Less Likely to Adjust
@@ -53,7 +53,7 @@ These settings related to how the screen rotation behaves and how long screens s
 
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
-| `start_in_rotating_mode` | Boolean | `True` | If True, the application starts cycling through screens automatically on boot. If False, it stays on the first screen indefinitely, until a button press starts rotation. Note that a train arrival prediction screen will continue to update even if rotation is disabled. |
+| `start_in_rotating_mode` | Boolean | `True` | If True, the application starts cycling through screens automatically on boot. If False, it stays on the first screen indefinitely, until a button press starts rotation. (See the [usage](https://github.com/GJT-34/wmata_metro_train_board/blob/main/USAGE.md) page for information on button presses.) Note that a train arrival prediction screen will continue to update even if rotation is disabled. |
 | `general_rotation_speed` | Integer | `8` | This sets the number of seconds to show a standard train arrival prediction screen. |
 | `alerts_rotation_speed` | Integer | `5` | This sets the number of seconds to show an alert or incident description screen(s). |
 | `dest_max_characters` | Integer | `8` | This sets the maximum number of characters to display for unchanged destination names on train arrival prediction screens. |
@@ -70,9 +70,9 @@ These settings are related to the establishment of a wifi connection and to API 
 
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
-| `wifi_max_attempts` | Integer | `5` | Number of times to attempt a wifi connection before failing. |
-| `metro_api_retries` | Integer | `3` | The number of times to try getting data from a WMATA Metro API before failing. |
-| `metro_api_fetch_intermission` | Integer | `20` | Minimum number of seconds between API calls using the same inputs to prevent rate-limiting. Note that none of the WMATA Metro APIs update more often than every 20 seconds. |
+| `wifi_max_attempts` | Integer | `5` | This establishes the number of times to attempt a wifi connection before failing. |
+| `metro_api_retries` | Integer | `3` | The sets the number of times to try getting data from a WMATA Metro API before failing. |
+| `metro_api_fetch_intermission` | Integer | `20` | This is the minimum number of seconds between API calls using the same inputs, to prevent hammering the API.
 
 ### Visual Styling & Colors
 
@@ -85,9 +85,9 @@ Colors are defined in Hex format (`0xRRGGBB`).
 | `heading_color` | Hex | `0xFF0000` | This the color used for train prediction arrival headers and other screen headers. Currently set to red. |
 | `status_dash_color` | Hex | `0xFF6600` | This is the color for the dash ("-") that appears on the rail status summary page to denote that there are no alerts or advisories for a given train line. Currently set to light orange. |
 | `status_exclamation_color` | Hex | `0xFF0000` | This is the color for the exclamation point ("!") that appears on the rail status summary page to denote that there are alerts or advisories for a given train line. Currently set to red. |
-| `train_line_color` | Dict | (Map) | This defines the specific color for every WMATA line code, to be used when `show_lines_in_their_colors` is set to True. |
 | `indicator_pixels_color` | List | (Colors) | This defines the colors that appear at the bottom row of the screen is response to button short- and long-presses. |
 | `show_lines_in_their_colors` | Boolean | `False` | If True, this option will display references to train lines in their color (i.e., the RD line will be displayed as red text). If False, the color defined in text_color will be used. |
+| `train_line_color` | Dict | (Map) | This defines the specific color for every WMATA line code, to be used when `show_lines_in_their_colors` is set to True. |
 
 | 'show_lines_in_their_colors': True | 'show_lines_in_their_colors': False |
 | --- | --- |
@@ -97,16 +97,16 @@ Colors are defined in Hex format (`0xRRGGBB`).
 
 | Option | Default | Description |
 | --- | --- | --- |
-| `group_1_arrow_direction` | `'right'` | The icon direction for Group 1 tracks. |
-| `group_2_arrow_direction` | `'left'` | The icon direction for Group 2 tracks. |
+| `group_1_arrow_direction` | `'right'` | The sets the icon direction for group 1 tracks. |
+| `group_2_arrow_direction` | `'left'` | The sets the icon direction for group 2 tracks. |
 
 ### Button Timing
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `long_press_threshold` | float | `0.5` | Seconds to hold a button before the press is considered "long" |
-| `long_blink_time` | float | `0.5` | Duration in seconds of a long indicator blink |
-| `short_blink_time` | float | `0.25` | Duration in seconds of a short indicator blink |
+| `long_blink_time` | float | `0.5` | Duration in seconds of a long blink indicator |
+| `short_blink_time` | float | `0.25` | Duration in seconds of a short blink indicator |
 
 ## Appendix
 
