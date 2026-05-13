@@ -13,7 +13,6 @@ This project contains the source code to create your own WMATA Metro Train Board
 
 ![bd1](img/bd1.jpg)
 ![bd2](img/bd2.jpg)
-![bd3](img/bd3.jpg)
 
 ## Background
 
