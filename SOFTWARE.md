@@ -24,22 +24,19 @@
 
     ![Loading Sign](img/bd4.jpg)
 
-## Getting a WMATA API Key
+7. Obtain a WMATA API key.
 
-1. Create a WMATA developer account on [WMATA's Developer Website](https://developer.wmata.com/signup/).
+- Create a WMATA developer account on [WMATA's Developer Website](https://developer.wmata.com/signup/).
+- After your account is created, add the _Default Tier_ subscription to your account on [this page](https://developer.wmata.com/products/).
+- After doing this, you will be redirected to [your profile](https://developer.wmata.com/profile).
+- Under the _Subscriptions_ section on your profile, select the **show** button beside the _Primary Key_. This is the key that allows the board to communicate with WMATA.
 
-2. After your account is created, add the _Default Tier_ subscription to your account on [this page](https://developer.wmata.com/products/).
+8. Add needed information into the settings.toml file.
 
-3. After doing this, you will be redirected to [your profile](https://developer.wmata.com/profile).
-
-4. Under the _Subscriptions_ section on your profile, select the **show** button beside the _Primary Key_. This is the key that allows the board to communicate with WMATA.
-
-## Setting Up the Board to Connect to WMATA
-
-1. Open the [settings.toml](src/settings.toml) file located in the root of the _CIRCUITPY_ volume.
-
-2. Fill in your wifi SSID and password and WMATA API key.
-
-3. Save this file. At this point, your board should refresh and connect to WMATA.
+- Open the [settings.toml](src/settings.toml) file located in the root of the _CIRCUITPY_ volume.
+- Fill in your wifi SSID and password and WMATA API key.
+- Save this file.
+  
+If everything has gone successfully, after a couple second pause your board should connect to wifi and begin displaying data. We still need to edit the configuration so it shows the right data, though. That's the next step.
 
 Next: ![Editing the configuration file](https://github.com/GJT-34/wmata_metro_trainboard/blob/main/CONFIGURE.md)
