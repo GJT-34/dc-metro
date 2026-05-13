@@ -6,16 +6,16 @@
 
     ![64x32 Matrix with Hot Glue on Screws](img/base-board.jpg)
 
-2. Remove any transparent yellow stickers on the posts of the _Matrix Portal_ and lightly screw in the phillips head screws into the posts. These only need to go down about 60% of the way for now.
+2. Remove any transparent yellow stickers on the posts of the MatrixPortal and lightly screw in the phillips head screws into the posts. These only need to go down about 60% of the way for now.
 
     ![Matrix Portal with Screws](img/wiring.jpg)
 
 3. Using the power cable provided with 64x32 matrix, slide the prong for the **red power cable** between the post and the screw on the port labeled **5v**. Tighten down this screw all the way using your screwdriver. Repeat the same for the **black power cable** and the **GND** port.
 
-    ![Matrix Portal with Separate Cables](img/cables.jpg)
-    ![Matrix Portal with Connected Cables](img/portal-setup.jpg)
+    ![MatrixPortal with Separate Cables](img/cables.jpg)
+    ![MatrixPortal with Connected Cables](img/portal-setup.jpg)
 
-4. Connect the _Matrix Portal_ to the large connector on the left-hand side of the back of the 64x32 matrix.
+4. Connect the MatrixPortal to the large connector on the left-hand side of the back of the 64x32 matrix.
 
     ![64x32 Matrix with Connector Highlighted](img/port.jpg)
 
