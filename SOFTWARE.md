@@ -23,13 +23,13 @@
    
 6. In this new folder will be a file called _lib.zip_. Copy this to the root of the _CIRCUITPY_ volume and then decompress it. It will create a new folder named _lib_, with multiple files in it. After the _lib_ folder is created, you can delete _lib.zip_ from the _CIRCUITPY_ volume, as it's no longer needed.
 
-7. Going back to the recently-created folder on your compueter, it will have a folder called _src_, and in that folder will be a file called _settings.toml_ that you need to edit. Open this file, fill in your wifi SSID, wifi password, and WMATA API key, replacing the mock data within the quotation marks. Save the file.
+7. Going back to the recently-created folder on your computer, it will have a folder called _src_, and in that folder will be a file called _settings.toml_ that you need to edit. Open this file, fill in your wifi SSID, wifi password, and WMATA API key, replacing the mock data within the quotation marks. Save the file.
 
 8. Copy all of the files from the _src_ folder to the root of the _CIRCUITPY_ volume. The final file structure should look like this:
 
     ![Source Files](img/file_manager.webp)
 
-6. The board should now light up and say "Loading..." and then begin trying to connect to wifi.
+9. The board should now light up and say "Loading..." and then begin trying to connect to wifi.
   
 If everything has gone successfully, after a few seconds your board should connect to wifi and begin displaying data. We still need to edit the configuration so it shows the right data, though. That's the next step.
 
