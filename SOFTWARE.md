@@ -33,4 +33,4 @@
   
 If everything has gone successfully, after a few seconds your board should connect to wifi and begin displaying data. We still need to edit the configuration so it shows the right data, though. That's the next step.
 
-Next: ![Editing the configuration file](https://github.com/GJT-34/wmata_metro_train_board/blob/main/CONFIGURE.md)
+Next: [Editing the configuration file](https://github.com/GJT-34/wmata_metro_train_board/blob/main/CONFIGURE.md)
