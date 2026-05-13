@@ -28,7 +28,9 @@ The `train_arrival_screens` list defines what train arrival prediction informati
 
 | 'first_columns': 1 | 'first_columns': 2 | 'first columns': 3 |
 | --- | --- | --- |
-| ![fp1](img/fp1.webp) | ![fp1](img/fp2.webp) | ![fp1](img/fp3.webp) |
+| ![fp1](img/fp1.webp) | ![fp2](img/fp2.webp) | ![fp3](img/fp3.webp) |
+
+![fp3](img/fp3.webp)
 
 ### Rail Status, Rail Incident, and Elevator Outage Screens
 
