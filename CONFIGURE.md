@@ -79,11 +79,15 @@ Colors are defined in Hex format (`0xRRGGBB`).
 | `text_color` | Hex | `0xFF6600` | This is the color for most text. Currently set to light orange. |
 | `text_color_8-car` | Hex | `0x00FF00` | This is the color used to specifically to highlight 8-car trains. Currently set to green. |
 | `heading_color` | Hex | `0xFF0000` | This the color used for train prediction arrival headers and other screen headers. Currently set to red. |
-| `show_lines_in_their_colors` | Boolean | `False` | If True, this option will display references to train lines in their color (i.e., the RD line will be displayed as red text). If False, the color defined in text_color will be used. |
 | `status_dash_color` | Hex | `0xFF6600` | This is the color for the dash ("-") that appears on the rail status summary page to denote that there are no alerts or advisories for a given train line. Currently set to light orange. |
 | `status_exclamation_color` | Hex | `0xFF0000` | This is the color for the exclamation point ("!") that appears on the rail status summary page to denote that there are alerts or advisories for a given train line. Currently set to red. |
 | `train_line_color` | Dict | (Map) | This defines the specific color for every WMATA line code, to be used when `show_lines_in_their_colors` is set to True. |
 | `indicator_pixels_color` | List | (Colors) | This defines the colors that appear at the bottom row of the screen is response to button short- and long-presses. |
+| `show_lines_in_their_colors` | Boolean | `False` | If True, this option will display references to train lines in their color (i.e., the RD line will be displayed as red text). If False, the color defined in text_color will be used. |
+
+| 'show_lines_in_their_colors': True | 'show_lines_in_their_colors': False |
+| --- | --- |
+| ![ln1](img/ln1.webp) | ![ln0](img/ln0.webp) |
 
 ### Arrow Directional Layout
 
