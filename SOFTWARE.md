@@ -28,9 +28,9 @@
 
 1. Create a WMATA developer account on [WMATA's Developer Website](https://developer.wmata.com/signup/).
 
-2. After your account is created, add the _Default Tier_ subscription to your account on [this page](https://developer.wmata.com/products/5475f1b0031f590f380924fe).
+2. After your account is created, add the _Default Tier_ subscription to your account on [this page](https://developer.wmata.com/products/).
 
-3. After doing this, you will be redirected to [your profile](https://developer.wmata.com/developer).
+3. After doing this, you will be redirected to [your profile](https://developer.wmata.com/profile).
 
 4. Under the _Subscriptions_ section on your profile, select the **show** button beside the _Primary Key_. This is the key that allows the board to communicate with WMATA.
 
