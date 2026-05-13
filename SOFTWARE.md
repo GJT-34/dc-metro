@@ -1,7 +1,5 @@
 # Installing the Software
 
-[The photos below show the MatrixPanel M4, but the MatrixPanel S3 looks similar.]
-
 1. Connect the MatrixPanel to your computer using a USB-C cable. Double click the button on the board labeled _RESET_. The board should mount onto your computer as a storage volume, most likely named _MATRXS3BOOT_.
     
     ![Matrix Connected via USB](img/usb-connected.jpg)
