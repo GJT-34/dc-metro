@@ -15,7 +15,7 @@
 - Create a WMATA developer account on [WMATA's Developer Website](https://developer.wmata.com/signup/).
 - After your account is created, add the _Default Tier_ subscription to your account on [this page](https://developer.wmata.com/products/).
 - After doing this, you will be redirected to [your profile](https://developer.wmata.com/profile).
-- Under the _Subscriptions_ section on your profile, select the **show** button beside the _Primary Key_. This is the key that allows the board to communicate with WMATA. You'll need this shortly.
+- Under the _Subscriptions_ section on your profile, select the _show_ link beside the _Primary Key_. This is the key that allows the board to communicate with WMATA. Keep this handy, as you'll need this shortly.
 
 4. Download the files in this repository (i.e., wmata_metro_trainboard) as a ZIP file by selecting the green _Code_ button at the top of this page, selecting the _Local_ tab, and selecting the _Download ZIP_ link.
 
