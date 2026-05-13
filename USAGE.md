@@ -27,7 +27,7 @@ The UP and DOWN buttons recognize long presses (i.e., presses of over half a sec
 
 ## Controlling Power to the Board
 
-I've seen some train board forks that provide configuration options that ensure the board doesn't attempt to get data from Metro's APIs at certain times, particularly while the Metrorail system is closed. That's not an option in this version. Instead, I suggest getting a smart plug for this purpose. A smart plug offers a lot of configurable options, and it only takes a few seconds for the board to boot from a cold start.
+I've seen some train board forks that provide configuration options that ensure the board doesn't attempt to get API data at certain times, particularly while the Metrorail system is closed. That's not an option in this version. Instead, I suggest getting a smart plug. Smart plugs are inexpensive and offer a lot of configurable options, and it only takes a few seconds for the board to boot from a cold start.
 
 ## Additional Help
 
