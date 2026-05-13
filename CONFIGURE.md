@@ -56,9 +56,13 @@ These settings related to how the screen rotation behaves and how long screens s
 | `start_in_rotating_mode` | Boolean | `True` | If True, the application starts cycling through screens automatically on boot. If False, it stays on the first screen indefinitely, until a button press starts rotation. Note that a train arrival prediction screen will continue to update even if rotation is disabled. |
 | `general_rotation_speed` | Integer | `8` | This sets the number of seconds to show a standard train arrival prediction screen. |
 | `alerts_rotation_speed` | Integer | `5` | This sets the number of seconds to show an alert or incident description screen(s). |
-| `show_splash` | Boolean | `True` | If True, this results in a splash transition screen being displayed before showing rail status, rail incident, or elevator outage screen(s). |
-| `splash_rotation_speed` | Integer | `2` | This sets the number of seconds to show the splash transition screen. |
 | `dest_max_characters` | Integer | `8` | This sets the maximum number of characters to display for unchanged destination names on train arrival prediction screens. |
+| `show_splash` | Boolean | `True` | If True, this results in a splash transition screen being displayed before showing rail status, rail incident, or elevator outage screen(s). The header on the splash screen varies depending on what information is displayed next. Metro typically uses a splash screen when temporarily switching away from providing train arrivial prediction data. |
+| `splash_rotation_speed` | Integer | `2` | This sets the number of seconds to show the splash transition screen. |
+
+| 'show_splash': True |
+| --- |
+| ![splash](img/splash.webp) |
 
 ### Wifi & API Settings
 
