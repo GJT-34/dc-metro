@@ -26,8 +26,7 @@ The `train_arrival_screens` list defines what train arrival prediction informati
 | `train_header` | Boolean | This determines whether a header is displayed the train arrival prediction screens. If True, the header will be a pre-defined, standard header (such as "LN CAR DST MIN"), unless you have defined an alternative header using in `alt_header_title`. If False, no header will be displayed and the space will instead be used to display an additional train prediction, meaning up to four would be displayed instead of the usual three.
 | `alt_header_title` | String | This is an optional, custom name to display at the top of the train arrival prediction screens, in place of a standard, pre-defined header (such as "LN CAR DST MIN"). It requires `train_header' to be set to True for this to be displayed. If left blank, the standard, pre-defined header will be used instead. |
 
-<p align="center">Examples of `first_columns` options</p>
-| Option 1 | Option 2 | Option 3 |
+| 'first_columns': 1 | 'first_columns': 2 | 'first columns': 3 |
 | --- | --- | --- |
 | pic | pic | pic |
 
