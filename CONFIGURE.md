@@ -88,6 +88,7 @@ Colors are defined in Hex format (`0xRRGGBB`).
 | `train_line_color` | Dict | (Map) | This defines the specific color for every WMATA line code, to be used when `show_lines_in_their_colors` is set to True. |
 | `indicator_pixels_color` | List | (Colors) | This defines the colors that appear at the bottom row of the screen is response to button short- and long-presses. |
 | `show_lines_in_their_colors` | Boolean | `False` | If True, this option will display references to train lines in their color (i.e., the RD line will be displayed as red text). If False, the color defined in text_color will be used. |
+
 | 'show_lines_in_their_colors': True | 'show_lines_in_their_colors': False |
 | --- | --- |
 | ![ln1](img/ln1.webp) | ![ln0](img/ln0.webp) |
