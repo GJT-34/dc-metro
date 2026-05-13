@@ -57,5 +57,6 @@ Anyway, let's get to it.
 
 ## Setup and Usage
 - ![Setting up the hardware](https://github.com/GJT-34/wmata_metro_trainboard/blob/main/HARDWARE.md)
-- ![Setting up the software](https://github.com/GJT-34/wmata_metro_trainboard/blob/main/SOFTWARE.md)
+- ![Installing the software](https://github.com/GJT-34/wmata_metro_trainboard/blob/main/SOFTWARE.md)
+- ![Editing the configuration file](https://github.com/GJT-34/wmata_metro_trainboard/blob/main/CONFIGURE.md)
 - ![Using the train board](https://github.com/GJT-34/wmata_metro_trainboard/blob/main/USAGE.md)
