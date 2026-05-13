@@ -1,5 +1,7 @@
 # Setting Up the Hardware
 
+(The photos below show the MatrixPanel M4, but the MatrixPanel S3 looks similar.)
+
 1. Use a hot glue gun to cover the sharp screws on the right-hand side of the 64x32 LED matrix, if present. This step is optional, but it may prevent wire chafing later on.
 
     ![64x32 Matrix with Hot Glue on Screws](img/base-board.jpg)
