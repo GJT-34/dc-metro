@@ -30,7 +30,7 @@ The `train_arrival_screens` list defines what train arrival prediction informati
 | --- | --- | --- |
 | ![fc1](img/fc1.webp) | ![fc2](img/fc2.webp) | ![fc3](img/fc3.webp) |
 
-| 'train_header': True & 'alt_header': '' | 'train_header': True & 'alt_header': 'Court House'| 'train_header': False |
+| 'train_header': True <br> 'alt_header': '' | 'train_header': True <br> 'alt_header': 'Court House'| 'train_header': False |
 | --- | --- | --- |
 | ![fc1](img/fc1.webp) | ![fc2](img/fc2.webp) | ![fc3](img/fc3.webp) |
 
