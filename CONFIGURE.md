@@ -1,6 +1,6 @@
 # Editing the Configuration File
 
-Open the [config.py](src/config.py) file located in the root of the _CIRCUITPY_ volume. This file controls the behavior and appearance of the trainboard. Below is a breakdown of the available settings. There are many settings, but the ones you'll likely want to adjust are described first.
+Open the [config.py](src/config.py) file located in the root of the _CIRCUITPY_ volume. This file controls the behavior and appearance of the trainboard. Below is a breakdown of the available settings. There are many settings, but the ones you'll likely want to adjust are that handful that are described first.
 
 The trainboard displays one or more screens in a rotation, according to the options you define in config.py. At the start of each rotation, the application evaluates which screen(s) should be in that rotation. Some screens, particularly the train arrival prediction screens, will be present in every rotation. Others, such as the listing of stations with elevator outages, can be configured to appear in rotation periodically or not at all.
 
