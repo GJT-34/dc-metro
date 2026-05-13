@@ -12,11 +12,11 @@
 
 3. Download this repository (wmata_metro_trainboard) as a ZIP file by selecting the green 'Code' button at the top of this page, selecting the "Local" tab, and selecting the "Download ZIP" link.
 
-4. Where you have downloaded the ZIP file on your computer, decompress it. In the resulting folder will be a file called _lib.zip_. Copy this to the root of the _CIRCUITPY_ volume, and then decompress it. There should be one folder named _lib_, with multiple files in it. After creating the _lib_ folder, you can delete _lib.zip_ from the _CIRCUITPY_ volume, as it's no longer needed.
+4. Where you have downloaded the ZIP file on your computer, decompress it. In the resulting folder will be a file called _lib.zip_. Copy this to the root of the _CIRCUITPY_ volume, and then decompress it. There should be one folder named _lib_, with multiple files in it. After the _lib_ folder is created, you can delete _lib.zip_ from the _CIRCUITPY_ volume, as it's no longer needed.
 
     ![Lib Decompressed](img/lib.png)
 
-5. The ZIP file you downloaded from this repository also contains a folder called _src_. Copy all of the Python files from that folder into the root of the _CIRCUITPY_ volume.
+5. The ZIP file you downloaded to your computer from this repository also contains a folder called _src_. Copy all of the Python files from this folder into the root of the _CIRCUITPY_ volume.
 
     ![Source Files](img/source.png)
 
