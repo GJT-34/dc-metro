@@ -18,10 +18,10 @@ The UP and DOWN buttons recognize long presses (i.e., presses of over half a sec
 
 - DOWN button long press: This toggles the display of detailed rail incidents, if any. After you release the button, a row of pixels at the bottom of the screen will blink yellow.
   - Single yellow blink: The display of detailed rail incident screens is turned off.
-  - Double yellow link: The display of detailed rail incident screens is turned on.
+  - Double yellow blink: The display of detailed rail incident screens is turned on.
 - DOWN button short press: This toggles the display of stations with elevator outages, if any. After you release the button, a row of pixels at the bottom of the screen will blink cyan. 
   - Single cyan blink: The display of stations with elevator outages is turned off.
-  - Double cyan link: The display of stations with elevator outages is turned on.
+  - Double cyan blink: The display of stations with elevator outages is turned on.
 
 ![S3](img/S3.webp)
 
