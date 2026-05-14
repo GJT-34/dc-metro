@@ -23,7 +23,7 @@ The UP and DOWN buttons recognize long presses (i.e., presses of over half a sec
   - Single cyan blink: The display of stations with elevator outages is turned off.
   - Double cyan blink: The display of stations with elevator outages is turned on.
 
-![S3](img/S3.jpg)
+![s3](img/s3.jpg)
 
 ## Controlling Power to the Board
 
