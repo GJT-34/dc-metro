@@ -62,7 +62,7 @@ These settings related to how the screen rotation behaves and how long screens s
 
 | 'show_splash': True |
 | --- |
-| ![splash](img/splash.webp) |
+| ![splash](img/splash.jpg) |
 
 ### Wifi & API Settings
 
