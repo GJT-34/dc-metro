@@ -47,7 +47,17 @@ These options control the visibility of additional screens.
 
 ## Settings You're Less Likely to Adjust
 
-### Display & UI Behavior
+### Wifi & API Settings
+
+These settings are related to the establishment of a wifi connection and to API usage.
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `wifi_max_attempts` | Integer | `5` | This establishes the number of times to attempt a wifi connection before failing. |
+| `metro_api_retries` | Integer | `3` | The sets the number of times to try getting data from a WMATA Metro API before failing. |
+| `metro_api_fetch_intermission` | Integer | `20` | This is the minimum number of seconds between API calls using the same inputs, to prevent hammering the API.
+
+### UI Behavior
 
 These settings related to how the screen rotation behaves and how long screens stay active.
 
@@ -63,16 +73,6 @@ These settings related to how the screen rotation behaves and how long screens s
 | 'show_splash': True |
 | --- |
 | ![splash](img/splash.jpg) |
-
-### Wifi & API Settings
-
-These settings are related to the establishment of a wifi connection and to API usage.
-
-| Option | Type | Default | Description |
-| --- | --- | --- | --- |
-| `wifi_max_attempts` | Integer | `5` | This establishes the number of times to attempt a wifi connection before failing. |
-| `metro_api_retries` | Integer | `3` | The sets the number of times to try getting data from a WMATA Metro API before failing. |
-| `metro_api_fetch_intermission` | Integer | `20` | This is the minimum number of seconds between API calls using the same inputs, to prevent hammering the API.
 
 ### Visual Styling & Colors
 
