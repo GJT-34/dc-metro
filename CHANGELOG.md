@@ -16,3 +16,7 @@ All notable changes to this project will be documented in this file.
 ## [1.0.1] - 2023-03-18
 
 - Updated metro_api.py with additional corrections to standardize the 'Destination' reported by the WMATA API
+
+## [2.0.0] - 2026-05-13
+
+- Completely revised code with new functionality
