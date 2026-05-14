@@ -25,9 +25,9 @@ I became one of several people who set up code forks on github of the original p
 ![font1_circles](img/font1_circles.jpg)
 ![font2_circles](img/font2_circles.jpg)
 
-My code now has several features, as noted at the top of this document, and a consequence is that one of the hardware requirements for the project has changed. The project originally called for the use of the Matrix Portal M4 to control the LED panel. Because the additional features use more memory than the original version, this code is designed to run on the newer Matrix Portal S3. The S3 has far more memory than the M4, which is no longer for sale.
+My code now has several features, as noted at the top of this page, and as a consequence one of the hardware requirements for the project has changed. The project originally called for the use of the Matrix Portal M4 to control the LED panel. Because the additional features use more memory than the original version, this code is designed to run on the newer Matrix Portal S3. The S3 has far more memory than the M4, which is no longer for sale.
 
-The goal this project is to build a display that resembles a Metro train board, but I've made a few exceptions. These include changes needed to account for the lack of pixels in the LED panel and to provide information that Metro's train boards don't provide. 
+The goal this project is to build a display that resembles a Metro train board, but I've made a few exceptions, especially to accouont for the lack of pixels in the LED panel. I've found the train board to be a unusual but useful piece of kit to have in my home, and maybe you will too.
 
 Let's get to it.
 
