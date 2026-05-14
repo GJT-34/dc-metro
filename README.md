@@ -1,6 +1,6 @@
 # WMATA Metro Train Board
 
-This project contains the source code to create your own Washington Metropolitan Area Transit Authority (WMATA) Metro Train Board. It was written using CircuitPython targeting the [Adafruit Matrix Portal S3](https://www.adafruit.com/product/5778) and 64x32 RGB LED matrices. Features include:
+This project contains the source code to create your own Washington Metropolitan Area Transit Authority (WMATA) Metro train board. It is written using CircuitPython targeting the [Adafruit Matrix Portal S3](https://www.adafruit.com/product/5778) and 64x32 RGB LED matrices. Features include:
 - The ability to auto-rotate through multiple "screens," including those with train arrival predictions in which each screen is customized to a specific station and particular train lines and groups (i.e., tracks or platforms) at that station
 - Multiple options for displaying train line, car length, and group/track information
 - Multiple options for what is displayed in the header for each train arrival prediction screen, and for omitting the header altogether
