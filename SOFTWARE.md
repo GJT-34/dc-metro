@@ -12,8 +12,8 @@
 
 3. Obtain a WMATA API key.
 
-- Create a WMATA developer account on [WMATA's Developer Website](https://developer.wmata.com/signup/).
-- After your account is created, add the _Default Tier_ subscription to your account on [this page](https://developer.wmata.com/products/).
+- Create an account on [WMATA's Developer Website](https://developer.wmata.com/signup/).
+- After your account is created, add the _Default Tier_ subscription to your account via [this page](https://developer.wmata.com/products/).
 - After doing this, you will be redirected to [your profile](https://developer.wmata.com/profile).
 - Under the _Subscriptions_ section on your profile, select the _show_ link beside the _Primary Key_. This will show the key that allows the board to communicate with WMATA. Keep this key handy, as you'll need this shortly.
 
@@ -21,7 +21,7 @@
 
 5. Where you have downloaded the ZIP file on your computer, decompress it. It will create a new folder on your computer called _wmata_metro_train_board-main_.
    
-6. In this new folder will be a folder called _src_, and in the folder will be file called _lib.zip_. Copy this file to the root of the _CIRCUITPY_ volume and decompress it. It will create a new folder named _lib_ with multiple files in it. It's possible that you already have a folder called _lib_ in your _CIRCUITPY_ volume. If this is the case, a new folder called _lib (2)_ will be created. Copy all the files from _lib (2)_ into _lib_ and delete _lib (2)_. Also delete _lib.zip_ from the _CIRCUITPY_ volume, as it's no longer needed.
+6. In this new folder will be a folder called _src_, and in it will be file called _lib.zip_. Copy this file to the root of the _CIRCUITPY_ volume and decompress it. It will create a new folder named _lib_ with multiple files in it. It's possible that you already have a folder called _lib_ in your _CIRCUITPY_ volume. If this is the case, a new folder called _lib (2)_ will be created. Copy all the files from _lib (2)_ into _lib_ and delete _lib (2)_. Also delete _lib.zip_ from the _CIRCUITPY_ volume, as it's no longer needed.
 
 7. Going back to the _src_ folder on your computer, in that folder will be a file called _settings.toml_ that you need to edit. Open this file and fill in your wifi SSID, wifi password, and WMATA API key, replacing the mock data within the quotation marks. Save the file.
 
