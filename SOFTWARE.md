@@ -25,7 +25,7 @@
 
 7. Going back to the _src_ folder on your computer, in that folder will be a file called _settings.toml_ that you need to edit. Open this file and fill in your wifi SSID, wifi password, and WMATA API key, replacing the mock data within the quotation marks. Save the file.
 
-8. Copy the remaining files in the _src_ folder (including the edited _settings.toml_ file, but not the _lib.zip_ file that you copied already) to the root of the Matrix Portal's _CIRCUITPY_ volume. The final file structure should include the following:
+8. Copy the remaining files in the _src_ folder (including the edited _settings.toml_ file, but not the _lib.zip_ file that you copied already) to the root of the Matrix Portal's _CIRCUITPY_ volume. The final file structure should look something like this, with all of the copied-over files present:
 
     ![Source Files](img/file_manager.webp)
 
