@@ -1,196 +1,189 @@
-import time
+import gc, os, time
 from config import config
+from utils import STATIONS_FOR_PREDICTIONS
 
-class MetroApiOnFireException(Exception):
-    pass
+_LINE_NAME_MAP = {
+    'RED': 'RD', 'YELLOW': 'YL', 'GREEN': 'GR',
+    'ORANGE': 'OR', 'SILVER': 'SV', 'BLUE': 'BL'
+}
 
 class MetroApi:
     def __init__(self):
-        pass
+        # Cache the API key once
+        self._api_key = os.getenv("METRO_API_KEY")
+        self.corrections = STATIONS_FOR_PREDICTIONS
+        
+        self._api_base = "https://api.wmata.com"
+        self._wmata_base = "https://wmata.com"
 
-    def fetch_train_predictions(self, wifi, station_code: str) -> [dict]:
-        return self._fetch_train_predictions(wifi, station_code, retry_attempt=0)
+    def fetch_train_predictions(self, requests, station_cfg: dict):
+        path = '/StationPrediction.svc/json/GetPrediction/'
+        url = f"{self._api_base}{path}{station_cfg['station_code']}"
+        headers = {'api_key': self._api_key}
+        retries = config.get('metro_api_retries', 3)
 
-    def _fetch_train_predictions(self, wifi, station_code: str, retry_attempt: 
-                                 int) -> [dict]:
+        for attempt in range(retries):
+            try:
+                # Use timeout to prevent hanging the Matrix refresh
+                with requests.get(url, headers=headers, timeout=10) as response:
+                    if response.status_code in (401, 403):
+                        print(f"Auth Error: {response.status_code}")
+                        return None
+                    
+                    if response.status_code != 200:
+                        time.sleep(1)
+                        continue
+                    
+                    data = response.json()
+                    gc.collect() # Clean up before processing
+                    return self._process_train_data(data, station_cfg)
+            except Exception as e:
+                print(f"Conn Error: {e}")
+                if attempt < retries - 1: time.sleep(2)
+        return []
+
+    def fetch_rail_alerts(self, requests):
+        url = self._wmata_base + "/rider_tools/metro_service_status/feeds/mis/rail.xml"
         try:
-            print("Fetching...")
-
-            # Counter potential null values in API response, as python doesn't recognize null
-            null = None
-
-            # Construct a URL that will fetch data for our desired station
-            api_url = config['metro_api_url'] + station_code
-
-            # Fetch data for our desired station from the URL
-            response = wifi.get(api_url, headers={'api_key': config['metro_api_key']},
-                                timeout=1).json()
-
-            # Filter train data so only objects for our selected group are in the list.
-            trains = list(filter(lambda t: t['Group'] == config['train_group'], 
-                          response['Trains']))
-            print("Received response from API. The filtered result:")
-            print(trains)
-            
-            # Switch to showing result for both groups if there are no trains with assigned lines 
-            # in the selected group AND the user wants result from both lines in this instance. 
-            # This can be useful when single-tracking occurs and one group switches to the other.
-            # 'No psngr' trains with no assigned lines are ignored in figuring the group to show.            
-            trains_test = list(filter(lambda t: t['Line'] in ['BL', 'GR', 'OR', 'RD', 'SV', 'YL'], 
-                                      trains))
-            if not trains_test and config['show_all_groups_if_nothing_else']:
-                print("No trains with an assigned line in this group.")
-                trains_alt = list(response['Trains'])
-                trains_alt = trains_alt[:config['num_trains']]
-                print("The re-filtered result, expanded to include the other one or two groups:")
-                print(trains_alt)
-                trains_test = list(filter(lambda t: t['Line'] in ['BL', 'GR', 'OR', 'RD', 'SV',
-                                   'YL'], trains_alt))
-                if not trains_test:
-                    print("No trains with an assigned line in any group, so using the initial \
-                          result as the basis for display.")
-                else:
-                    trains = list(response['Trains'])
-                    print("Using the re-filtered result as the basis for display.")
-                            
-            # Convert train objects list to a custom list with data needed for display
-            trains = [self._normalize_train_response(t) for t in trains][:config['num_trains']]
-            print("Normalized train response:")
-            for train in trains:
-                print(train)
-
-            return trains
-
+            with requests.get(url, timeout=10) as response:
+                if response.status_code == 200:
+                    text = response.text
+                    gc.collect()
+                    return self._parse_rss_alerts(text)
         except Exception as e:
-            print(e)
-            if retry_attempt < config['metro_api_retries']:
-                print("Failed to connect to API. Retrying...")
-                # Recursion for retry logic because I don't care about your stack
-                time.sleep(config['refresh_interval'])
-                return self._fetch_train_predictions(wifi, station_code, 
-                                                     retry_attempt + 1)
+            print(f"Alert Fetch Error: {e}")
+        return []
+
+    def _parse_rss_alerts(self, text):
+        alerts = []
+        pos = 0
+        while True:
+            start = text.find('<item>', pos)
+            if start == -1:
+                break
+            end = text.find('</item>', start)
+            if end == -1:
+                break
+            item = text[start:end]
+            title = self._extract_tag(item, 'title')
+            desc = self._extract_tag(item, 'description')
+            if title and desc:
+                desc = (desc.replace('&amp;', '&').replace('&lt;', '<')
+                            .replace('&gt;', '>').replace('&quot;', '"')
+                            .replace('&apos;', "'").replace('&#39;', "'"))
+                codes = [_LINE_NAME_MAP.get(p.strip(), p.strip()) for p in title.split(',') if p.strip()]
+                alerts.append({
+                    'LinesAffected': '; '.join(codes) + ';' if codes else 'All',
+                    'Description': desc.strip()
+                })
+            pos = end + 7
+        gc.collect()
+        return alerts
+
+    def _extract_tag(self, text, tag):
+        open_tag = f'<{tag}>'
+        start = text.find(open_tag)
+        if start == -1:
+            return ''
+        start += len(open_tag)
+        end = text.find(f'</{tag}>', start)
+        return text[start:end].strip() if end != -1 else ''
+
+    def fetch_elevator_outages(self, requests):
+        path = '/Incidents.svc/json/ElevatorIncidents'
+        url = f"{self._api_base}{path}"
+        headers = {"api_key": self._api_key}
+        try:
+            gc.collect()
+            with requests.get(url, headers=headers, timeout=10) as response:
+                if response.status_code == 200:
+                    raw = response.json().get("ElevatorIncidents", [])
+                    if not raw:
+                        return []
+                    station_codes = [
+                        inc.get('StationCode') for inc in raw 
+                        if inc and inc.get('UnitType') == "ELEVATOR" and inc.get('StationCode')
+                    ]
+                    raw = None
+                    gc.collect()
+                    return list(set(station_codes))
+        except Exception as e:
+            print(f"Elevator API Error: {e}")
+            return []
+
+    def _process_train_data(self, json_data, station_cfg):
+        target_lines = station_cfg.get('lines', [])
+        target_groups = [str(g) for g in station_cfg.get('groups', [1, 2, 3])]
+        transit_time = int(station_cfg.get('transit_time', 0))
+        
+        trains = json_data.get('Trains', [])
+        if not trains: return []
+
+        # List comprehension for efficiency
+        processed_list = []
+        for t in trains:
+            line = t.get('Line')
+            group = str(t.get('Group'))
+            
+            if (not target_lines or line in target_lines) and group in target_groups:
+                m_raw = t.get('Min', '--')
+                
+                # Numeric value for sorting and pruning
+                if m_raw in ("ARR", "BRD"): val = 0
+                elif m_raw.isdigit(): val = int(m_raw)
+                else: val = -1 # Delayed/Unknown
+                
+                processed_list.append({
+                    'n_min': val,
+                    'normalized': self._normalize_train_response(t)
+                })
+
+        # Sort: Valid times first, then delays (-1)
+        processed_list.sort(key=lambda x: (x['n_min'] == -1, x['n_min']))
+
+        # Pruning (Keep the board legible)
+        limit = 4 if not station_cfg.get('train_header', True) else 3
+        while len(processed_list) > limit:
+            first_mins = processed_list[0]['n_min']
+            # If the soonest train is uncatchable, pop it
+            if -1 < first_mins < transit_time:
+                processed_list.pop(0)
             else:
-                raise MetroApiOnFireException()
+                break
 
-    # Take a JSON object for single train and return only the data needed for display
-    def _normalize_train_response(self, train: dict) -> dict:
-        line = train['Line']
-        line = self._get_line_color(line)
+        return [item['normalized'] for item in processed_list[:limit]]
 
-        car = train['Car']
-        car = self._get_corrected_car_value(car)
-
-        destination = train['Destination']
-        destination = self._get_corrected_dest_case(destination)
-        destination = self._get_corrected_dest_value(destination)
-
-        min = train['Min']
-        min = self._get_corrected_min_value(min)
-
+    def _normalize_train_response(self, t):
+        line = t.get('Line', '--')
+        
+        # Pull the map once per train to avoid repetitive config.get calls
+        line_map = config.get('train_line_color', {})
+        line_hex = line_map.get(line, config.get('text_color', 0xFFFFFF))
+        
+        raw_dest = t.get('DestinationName', 'Unknown')
+        dest = self._get_corrected_dest_case(raw_dest)
+        dest = self._get_corrected_dest_value(dest)
+        
         return {
-            'line': line,
-            'car': car,
-            'destination': destination,
-            'min': min
+            'line_abbrev': line,
+            'line_hex': line_hex,
+            'car': t.get('Car', '-'),
+            'destination': dest,
+            'min': self._get_corrected_min_value(t.get('Min', '--')),
+            'group': t.get('Group', '1')
         }
 
-    # Convert two-letter 'line" value into equivalent integer
-    def _get_line_color(self, line: str) -> int:
-        if line == 'BL':
-            return 0x0000FF
-        elif line == 'GR':
-            return 0x00FF00
-        elif line == 'OR':
-            return 0xFF5500
-        elif line == 'RD':
-            return 0xFF0000
-        elif line == 'SV':
-            return 0xAAAAAA
-        elif line == 'YL':
-            return 0xFFFF00
-        else:
-            return 0x000000
+    def _get_corrected_dest_value(self, dest):
+        dest_lower = dest.lower()
+        for key, corrected in self.corrections.items():
+            if dest_lower.startswith(key):
+                return corrected
+        return dest
 
-    # Respond to empty 'car' value
-    def _get_corrected_car_value(self, car: str) -> str:
-        if car is None:
-            car = '-'
-        return car
-    
-    # Convert 'Destination' WMATA API result from all caps to title case
-    def _get_corrected_dest_case(self, destination: str) -> str:
-        # The WMATA API sometimes reports 'Destination' in all caps. Changing from all caps to 
-        # titlecase takes extra work because .title() does not work in CircuitPython. 
-        all_caps = 0
-        dest_replace = ""
-        if len(destination) > 0 and destination.isupper():
-            destination = destination.lower()
-            for word in destination.split():
-                dest_replace += word[0].upper() + word[1:] + " "    
-            dest_replace = dest_replace.rstrip()
-            destination = dest_replace
-        return destination
-    
-    # Correct for problems in 'Destination' WMATA API result
-    def _get_corrected_dest_value(self, destination: str) -> str:
-        # The 'Destination' reported by the WMATA API sometimes needs correcting. For instance, 
-        # instead of 'NewCrltn', the API may use 'N Carrollton', which is too long to display 
-        # properly. To address this, a dictionary is used to correct for known and potential 
-        # problems in API-reported data. Also included in the dictionary any extra-long 
-        # destinations that we don't want cropped, such as the 9-char 'Gallry Pl' (which displays
-        # OK despite its length when using a variable-width font).
-        # If the 1st string appears in any part of Destination, replace Destination with 2nd string
-        dest_corrections = {
-            'No Passenger': 'No Psngr',
-            'NoPssenger': 'No Psngr',
-            'ssenger': 'No Psngr',
-            'Branch': 'Brnch Av',
-            'Brnch Ave': 'Brnch Av',
-            'Carroll': 'NewCrltn',
-            'Chinatown': 'Gallry Pl',
-            'Downtown': 'Largo',
-            'DT Largo': 'Largo',
-            'Dulles': 'Dulles',
-            'Fairfax': 'Fairfax',
-            'Farragut N': 'Frgut N.',
-            'Fran/': 'Frnconia',
-            'Franconia': 'Frnconia',
-            'Ft. Tottn': 'Ft.Tottn',
-            'Gallery': 'Gallry Pl',
-            'Gallry Pl': 'Gallry Pl',
-            'GallryPl': 'Gallry Pl',
-            'Greenbelt': 'Grnbelt',
-            'Grosvnor': 'Grsvnor',
-            'Huntington': 'Hntingtn',
-            'NoMa': 'NoMa',
-            'Noma': 'NoMa',
-            'R.i.': 'R.I.',
-            'Rhode': 'R.I.',
-            'Shady': 'Shady Gr',
-            'Silver': 'SilvrSpr',
-            'Silvrspr': 'SilvrSpr',
-            'Totten': 'Ft.Tottn',
-            'U St': 'U St',
-            'Vernon': 'Mt. Vern',
-            'W Falls': 'W Fls Ch',
-            'West Falls': 'W Fls Ch'
-        }
-        dest_replace = ""
-        for key in dest_corrections.keys():
-            if key in destination:
-                dest_replace = dest_corrections[key]
-        if dest_replace:
-            destination = dest_replace
-        else:
-            destination = destination[:config['dest_max_characters']]
-        return destination
-    
-    # Reduce three-character 'min' values to two characters, to save space on the train board
-    def _get_corrected_min_value(self, min: str) -> str:
-        if min == 'ARR':
-            min = 'AR'
-        if min == 'BRD':
-            min = 'BD'
-        if min == '---' or min == '':
-            min = 'DL'
-        return min
+    def _get_corrected_dest_case(self, dest):
+        if not dest.isupper(): return dest
+        return " ".join([w[0].upper() + w[1:].lower() for w in dest.split()])
+
+    def _get_corrected_min_value(self, min_val):
+        mapping = {'ARR': 'AR', 'BRD': 'BD', 'DLY': 'DY', '---': 'DY'}
+        return mapping.get(min_val, str(min_val)[:2])
