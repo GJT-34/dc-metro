@@ -1,5 +1,7 @@
 # Using the Train Board
 
+For the most part, using the train board is a matter of turning it on and glancing at the screen periodically. However, there are some tips that can help you optimize your use of the board.
+
 ## Button Presses
 
 The Matrix Portal has three buttons on it:
