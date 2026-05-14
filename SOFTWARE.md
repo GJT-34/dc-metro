@@ -21,11 +21,11 @@
 
 5. Where you have downloaded the ZIP file on your computer, decompress it. It will create a new folder on your computer called _wmata_metro_train_board-main_.
    
-6. In this new folder will be a file called _lib.zip_. Copy this to the root of the _CIRCUITPY_ volume and then decompress it. It will create a new folder named _lib_, with multiple files in it. After the _lib_ folder is created, you can delete _lib.zip_ from the _CIRCUITPY_ volume, as it's no longer needed.
+6. In this new folder will be a folder called _src_, and in the folder will be file called _lib.zip_. Copy this file to the root of the _CIRCUITPY_ volume and then decompress it. It will create a new folder named _lib_, with multiple files in it. After the _lib_ folder is created, you can delete _lib.zip_ from the _CIRCUITPY_ volume, as it's no longer needed.
 
-7. Going back to the recently-created folder on your computer, it will have a folder called _src_, and in that folder will be a file called _settings.toml_ that you need to edit. Open this file, fill in your wifi SSID, wifi password, and WMATA API key, replacing the mock data within the quotation marks. Save the file.
+7. Going back to the _src_ folder on your computer, in that folder will be a file called _settings.toml_ that you need to edit. Open this file, fill in your wifi SSID, wifi password, and WMATA API key, replacing the mock data within the quotation marks. Save the file.
 
-8. Copy all of the files from the _src_ folder (including the edited _settings.toml_ file) to the root of the Matrix Portal's _CIRCUITPY_ volume. The final file structure should look like this:
+8. Copy the remaining files in the _src_ folder (including the edited _settings.toml_ file, but not the _lib.zip_ file that you copied already) to the root of the Matrix Portal's _CIRCUITPY_ volume. The final file structure should look like this:
 
     ![Source Files](img/file_manager.webp)
 
