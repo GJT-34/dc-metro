@@ -38,7 +38,7 @@ super_group.append(matrix_group)
 super_group.append(indicator_group)
 display.root_group = super_group
 
-shared_font = bitmap_font.load_font('Metroesque.bdf')
+shared_font = bitmap_font.load_font('metroesque.bdf')
 
 loading_label = Label(
     shared_font, 
