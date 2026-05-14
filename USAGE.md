@@ -16,9 +16,9 @@ The UP and DOWN buttons recognize long presses (i.e., presses of over half a sec
   - Double red blink: The board is in rotating mode.
 - **UP button short press**: This advances the display to the next screen, even if the screens are in stationary mode. After you release the button, a row of pixels at the bottom of the screen will blink blue once to confirm the button short press. 
 
-- **DOWN button long press**: This toggles the display of detailed rail incidents, if any. After you release the button, a row of pixels at the bottom of the screen will blink yellow to confirm the button long press.
-  - Single yellow blink: The display of detailed rail incident screens is turned off.
-  - Double yellow blink: The display of detailed rail incident screens is turned on.
+- **DOWN button long press**: This toggles the display of detailed rail alerts, if any. After you release the button, a row of pixels at the bottom of the screen will blink yellow to confirm the button long press.
+  - Single yellow blink: The display of detailed rail alert screens is turned off.
+  - Double yellow blink: The display of detailed rail alert screens is turned on.
 - **DOWN button short press**: This toggles the display of stations with elevator outages, if any. After you release the button, a row of pixels at the bottom of the screen will blink cyan to confirm the button short press. 
   - Single cyan blink: The display of stations with elevator outages is turned off.
   - Double cyan blink: The display of stations with elevator outages is turned on.
