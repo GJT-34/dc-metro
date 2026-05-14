@@ -22,8 +22,8 @@ In November 2020, a [project](https://github.com/metro-sign/dc-metro) landed on 
 
 I became one of several people who set up code forks on github of the original project, which has not been updated since 2020. At the time, my main contribution was to edit the default font to try to more closely resemble the font on Metro's train boards. This was tricky not only because of the space considerations of the 64x32 screen, but because Metro's train boards use multiple fonts with subtle differences. You can see some examples in these train board pics:
 
-![font1_circles](img/font1_circles.webp)
-![font2_circles](img/font2_circles.webp)
+![font1_circles](img/font1_circles.jpg)
+![font2_circles](img/font2_circles.jpg)
 
 My code now has several features, as noted at the top of this document, and a consequence is that one of the hardware requirements for the project has changed. The project originally called for the use of the Matrix Portal M4 to control the LED panel. Because the additional features use more memory than the original version, this code is designed to run on the newer Matrix Portal S3. The S3 has far more memory than the M4, which is no longer for sale.
 
