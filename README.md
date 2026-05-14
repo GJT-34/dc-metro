@@ -1,5 +1,3 @@
-[I'm reworking the code for this right now, including an upgrade to CircuitPython 10. Until it's ready, don't follow the instructions on this page.]
-
 # WMATA Metro Train Board
 
 This project contains the source code to create your own Washington Metropolitan Area Transit Authority (WMATA) Metro Train Board. It was written using CircuitPython targeting the [Adafruit Matrix Portal S3](https://www.adafruit.com/product/5778) and 64x32 RGB LED matrices. Features include:
