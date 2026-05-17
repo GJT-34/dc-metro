@@ -32,7 +32,7 @@ The `train_arrival_screens` list defines what train arrival prediction informati
 
 | 'train_header': True <br> 'alt_train_header': '' | 'train_header': True <br> 'alt_train_header': 'Court House'| 'train_header_title': False |
 | --- | --- | --- |
-| ![header10](img/header10.webp) | ![header11](img/header11.webp) | ![header0](img/header0.webp) |
+| ![train_header10](img/train_header10.webp) | ![train_header11](img/train_header11.webp) | ![train_header0](img/train_header0.webp) |
 
 ### Bus Arrival Prediction Screens
 
