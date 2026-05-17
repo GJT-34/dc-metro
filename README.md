@@ -1,11 +1,11 @@
-# WMATA Metro Train Board
+# WMATA Metro Info Board
 
-This project contains the source code to create your own Washington Metropolitan Area Transit Authority (WMATA) Metro train board. It is written using CircuitPython targeting the [Adafruit Matrix Portal S3](https://www.adafruit.com/product/5778) and 64x32 RGB LED matrices. Features include:
-- The ability to auto-rotate through multiple "screens," including those with train arrival predictions in which each screen is customized to a specific station and particular train lines and groups (i.e., tracks or platforms) at that station
-- Multiple options for displaying train line, car length, and group/track information
-- Multiple options for what is displayed in the header for each train arrival prediction screen, and for omitting the header altogether
-- The ability to prioritize the display of trains that are predicted to arrive at a station only after you can get to that station
-- The ability to display information on Metro's status, rail alerts, and elevator outages
+This project contains the source code to create your own Washington Metropolitan Area Transit Authority (WMATA) Metro information board, showing both Metrorail and Metrobus information. It is written using CircuitPython targeting the [Adafruit Matrix Portal S3](https://www.adafruit.com/product/5778) and 64x32 RGB LED matrices. Features include:
+- The ability to auto-rotate through multiple "screens," including multiple arrival prediction screens
+- Multiple options for displaying train and bus arrival predictions
+- Multiple options for arrival prediction screen headers
+- The ability to prioritize the display of trains and buses that are predicted to arrive at a station or stop only after you can get there
+- The ability to display rail alerts and elevator outages
 - The ability to control the screens through buttons on the Matrix Portal in addition to auto-rotation
 - A font customized to resemble the font WMATA uses on its train boards
 
@@ -14,9 +14,11 @@ This project contains the source code to create your own Washington Metropolitan
 
 ## Background
 
-Metro's first generation of digital train prediction arrival boards--which WMATA calls passenger information display system (PIDS) monitors--have been a familiar sight since their introduction in October 2000. They've been ubiquitous at Metro stations, typically with a couple boards at each track and sometimes at one or more at station entrances as well. Many millions of riders have seem them, given that Metro routinely has averaged over 100 million rides a year since these train boards were implemented. 
+Metro's first generation of digital prediction arrival boards--which WMATA calls passenger information display system (PIDS) monitors--have been a familiar sight since their introduction at Metrorail stations in October 2000. They've been ubiquitous at Metro stations, typically with a couple boards at each track and sometimes at one or more at station entrances as well. Many millions of riders have seem them, given that Metro routinely has averaged over 100 million rides a year since these train boards were implemented. WMATA's use of digital information boards at bus stops came later, with the first displays installed in late 2008.
 
-The boards consist of LED panels with extremely limited pixel densities and color capabilities. Despite having a diagonal size of around three feet, they only have a resolution of 192x68 pixels. To put that into perspective, a typical phone these days will have a pixel density of 300 to over 500 pixels per inch (PPI). Metro's panels also show only red, green, and yellow colors. WMATA has begun phasing out these train boards in favor of a new generation of displays, but the idea of a do-it-yourself, old-school Metro train arrival board still has some appeal. 
+The train and bus boards consist of LED panels with extremely limited pixel densities and color capabilities. The train boards have a resolution of 192x68 pixels spread out on a display that is over two feet in diagonal length. To put that into perspective, a typical phone these days will have a pixel density of 300 to over 500 pixels per inch (PPI). The train panels also show only red, green, and yellow colors. The bus displays sport similarly low-density pixel counts on a wide and narrow display that only displays a single color.
+
+WMATA has begun phasing out these train boards in favor of a new generation of displays, but the idea of a do-it-yourself, old-school Metro train arrival board still has some appeal. 
 
 In November 2020, a [project](https://github.com/metro-sign/dc-metro) landed on github that allowed people to make their own Metro train boards. The only hardware needed was a LED panel and a controller device called the Matrix Portal M4, which could be purchased together for around $65 on Adafruit, before shipping and taxes. The LED panel recommended for that project has a pixel resolution of just 64x32. That's not an exact match for what Metro uses, but it's similar. Anyone looking to implement this project also needed to obtain a free API key from WMATA. The project received some online attention, such as this DCist [article](https://dcist.com/story/23/03/16/heres-how-to-build-your-own-mini-metro-arrival-screen-for-your-home-or-office/). 
 
