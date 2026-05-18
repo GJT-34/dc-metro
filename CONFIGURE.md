@@ -2,9 +2,9 @@
 
 Open the _config.py_ file located in the root of the Matrix Portal's _CIRCUITPY_ volume. This file controls the behavior and appearance of the train board. Below is a breakdown of the available settings. There are many settings, but the ones you'll likely want to adjust are that handful that are described first.
 
-The train board displays one or more screens in a rotation, according to the options you define in _config.py_. At the start of each rotation, the application evaluates which screen(s) should be in that rotation. Some screens, particularly the train arrival prediction screens, will be present in every rotation. Others, such as the listing of stations with elevator outages, can be configured to appear in rotation periodically or not at all.
+The info board displays one or more screens in a rotation, according to the options you define in _config.py_. Some screens, particularly the train and bus arrival prediction screens, will be present in every rotation or not at all. Others, such as the listing of stations with elevator outages, can be configured to appear in every rotation, periodically, or not at all.
 
-The train arrival prediction screens are customizable in several ways. Each train arrival prediction screen starts with information for one station, which can then be winnowed down further by several criteria. There also are several options that control the way the board provides information on the train arrival prediction screens, including which header and columns of information are shown. 
+The train and bus arrival prediction screens are customizable in several ways. Each arrival prediction screen starts with information for one station or stop, which can then be winnowed down further by several criteria. There also are several options that control the way the board provides information, including which header(s) and columns of information are shown. 
 
 Be careful to use single quotes, brackets, and commas consistent with what is set out in the file.
 
