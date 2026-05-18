@@ -50,7 +50,7 @@ The `bus_arrival_screens` list defines what bus arrival prediction information t
 
 | 'bus_display_mode': 1 | 'bus_display_mode': 2 |
 | --- | --- |
-| ![fc1](img/bd1.webp) | ![fc2](img/bd2.webp) |
+| ![bd1](img/bd1.webp) | ![bd2](img/bd2.webp) |
 
 | 'bus_header': True <br> 'alt_bus_header1': '' <br> 'alt_bus_header2': '' | 'bus_header': True <br> 'alt_bus_header1': 'Home' <br> 'alt_bus_header2': '' | 'bus_header': True <br> 'alt_bus_header1': 'Wisc Av NB &' <br> 'alt_bus_header2': 'Rodman St NW' | 'bus_header': False |
 | --- | --- | --- | --- |
