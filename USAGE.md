@@ -1,6 +1,6 @@
-# Using the Train Board
+# Using the Info Board
 
-For the most part, using the train board is a matter of turning it on and glancing at the screen periodically. However, there are some tips that can help you optimize your use of the board.
+Once it's configured, using the info board is mostly a matter of turning it on and letting it run. However, there are some tips that can help you optimize your use of the board.
 
 ## Button Presses
 
@@ -27,9 +27,9 @@ The UP and DOWN buttons recognize long presses (i.e., presses of over half a sec
 
 ![s3](img/s3.jpg)
 
-## Controlling Power to the Board
+## Controlling Power to the Info Board
 
-I've seen some train board forks that provide configuration options to stop the board from trying to get API data at certain times, particularly while the Metrorail system is closed. There are no such options in this version. Instead, I suggest getting a smart plug. Smart plugs are inexpensive and offer a lot of configurable options, and it only takes a few seconds for the board to boot from a cold start.
+I've seen some variations of the [original train board](https://github.com/metro-sign/dc-metro) that provide configuration options to stop the board from calling for API data at certain times, particularly while the Metrorail system is closed. There are no such options in this version. Instead, if that's an issue for you I suggest you get a smart plug. Smart plugs are inexpensive and offer a lot of configurable options, and it only takes a few seconds for the board to boot from a cold start.
 
 ## Additional Help
 
